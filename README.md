@@ -47,17 +47,25 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ##  Install Docker:
 
-```
+```sh
 sudo apt-get update
 sudo apt install gnupg2 pass -y
 sudo apt install docker.io -y
-sudo usermod -aG docker $USER
-newgrp docker
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo systemctl status docker
 ```
 
+## Restart services:
+
+```sh
+newgrp docker
+sudo usermod -aG docker $USER
+sudo usermod -aG docker jenkins
+sudo service jenkins restart
+sudo systemctl daemon-reload
+sudo service docker restart
+```
 
 
 # Coffee suppliers sample app
