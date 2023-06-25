@@ -3,7 +3,7 @@ pipeline {
     environment {
         dockerregistry = 'https://registry.hub.docker.com'
         dockerhuburl = "montcarotte/jenkins_nodejs_app_demo"
-        githuburl = "klimenta/chitchat"
+        githuburl = "otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes"
         dockerhubcrd = 'dockerhub'
     }
 
