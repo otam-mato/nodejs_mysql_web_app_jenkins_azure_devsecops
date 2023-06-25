@@ -20,6 +20,7 @@
     "serve-favicon": "^2.5.0",
     "socket.io": "^2.3.0",
     "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "mocha": "^5.2.0"
   }
 }
