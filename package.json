@@ -4,7 +4,8 @@
   "description": "simple coffee partners API",
   "main": "index.js",
   "scripts": {
-    "start": "APP_DB_HOST=$APP_DB_HOST node index.js"
+    "start": "APP_DB_HOST=$APP_DB_HOST node index.js",
+    "test": "mocha test"
   },
   "author": "aws t&c",
   "license": "MIT",
