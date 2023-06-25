@@ -1,4 +1,12 @@
 pipeline {
+    
+    environment {
+        dockerregistry = 'https://registry.hub.docker.com'
+        dockerhuburl = "montcarotte/jenkins_nodejs_app_demo"
+        githuburl = "klimenta/chitchat"
+        dockerhubcrd = 'dockerhub'
+    }
+
     agent any
  
     tools {nodejs "nodejs"}
