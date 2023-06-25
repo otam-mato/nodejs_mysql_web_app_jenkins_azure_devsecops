@@ -1,4 +1,5 @@
 pipeline {
+    agent any
     
     environment {
         dockerregistry = 'https://registry.hub.docker.com'
@@ -6,8 +7,6 @@ pipeline {
         githuburl = "otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes"
         dockerhubcrd = 'dockerhub'
     }
-
-    agent any
  
     tools {nodejs "nodejs"}
  
@@ -15,13 +14,27 @@ pipeline {
  
         stage('Check out') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/otammato/FullStack_NodeJS_MySql_Docker.git']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes.git']])
             }
         }    
         stage('Install dependencies') {
             steps {
                 sh 'npm install'
             }
+        }
+        
+        stage('Test') {
+            steps {
+                sh 'npm test'
+            }
+        }
+        
+        stage('Build image') {
+          steps{
+            script {
+              dockerImage = docker.build(dockerhuburl + ":$BUILD_NUMBER")
+            }
+          }
         }
     }
 }
