@@ -2,26 +2,26 @@
 
 https://varunmanik1.medium.com/devops-jenkins-aws-series-part-1-how-to-install-jenkins-on-aws-ubuntu-22-04-cb0c3cdb055
 
-## Install Java: Jenkins requires Java to run, so the first step is to install Java on the Ubuntu instance. You can do this by running the following command:
+### Install Java: Jenkins requires Java to run, so the first step is to install Java on the Ubuntu instance. You can do this by running the following command:
 
 ```sh
 sudo apt-get update
 sudo apt-get install openjdk-11-jdk
 ```
 
-## Add Jenkins repository: Next, you need to add the Jenkins repository to the instance by running the following commands:
+### Add Jenkins repository: Next, you need to add the Jenkins repository to the instance by running the following commands:
 
 ```sh
 sudo curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee   /usr/share/keyrings/jenkins-keyring.asc > /dev/null
 sudo echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]   https://pkg.jenkins.io/debian-stable binary/ | sudo tee   /etc/apt/sources.list.d/jenkins.list > /dev/null
 ```
-## Install Jenkins: Now you can install Jenkins by running the following command:
+### Install Jenkins: Now you can install Jenkins by running the following command:
 
 ```sh
 sudo apt-get update
 sudo apt-get install jenkins
 ```
-## Start Jenkins: Once Jenkins is installed, start & enable the Jenkins service using the following command:
+### Start Jenkins: Once Jenkins is installed, start & enable the Jenkins service using the following command:
 
 ```sh
 sudo systemctl start jenkins
