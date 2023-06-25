@@ -8,7 +8,7 @@ pipeline {
         dockerhubcrd = 'dockerhub'
     }
  
-    tools {nodejs "nodejs"}
+    tools {nodejs "node"}
  
     stages {
  
@@ -23,7 +23,7 @@ pipeline {
             }
         }
         
-        stage('Test') {
+        stage('Test app') {
             steps {
                 sh 'npm test'
             }
@@ -34,6 +34,42 @@ pipeline {
             script {
               dockerImage = docker.build(dockerhuburl + ":$BUILD_NUMBER")
             }
+          }
+        }
+        
+        stage('Test image') {
+            steps {
+                script {
+                    // Start the Docker container
+                    def container = docker.image("${dockerhuburl}:$BUILD_NUMBER").run("-d")
+                    try {
+                        // Wait for the container to start running
+                        sh 'sleep 10'
+                        
+                        // Run the test command outside the container
+                        sh "docker exec ${container.id} npm test"
+                    } finally {
+                        // Stop the container
+                        container.stop()
+                    }
+                }
+            }
+        }
+        
+        stage('Deploy image') {
+          steps{
+            script {
+              docker.withRegistry(dockerregistry, dockerhubcrd ) {
+                dockerImage.push("${env.BUILD_NUMBER}")
+                dockerImage.push("latest")
+              }
+            }
+          }
+        }
+ 
+        stage('Remove image') {
+          steps{
+            sh "docker rmi $dockerhuburl:$BUILD_NUMBER"
           }
         }
     }
