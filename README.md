@@ -33,6 +33,12 @@ sudo systemctl status jenkins
 sudo systemctl enable jenkins
 ```
 
+5. Configure Jenkins:
+
+```
+cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+
 # Coffee suppliers sample app
 
 ## Summary
