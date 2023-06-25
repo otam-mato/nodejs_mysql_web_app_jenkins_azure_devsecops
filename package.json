@@ -1,7 +1,7 @@
 {
   "name": "coffee_api",
   "version": "1.0.0",
-  "description": "simple coffee parners API",
+  "description": "simple coffee partners API",
   "main": "index.js",
   "scripts": {
     "start": "APP_DB_HOST=$APP_DB_HOST node index.js"
@@ -16,7 +16,7 @@
     "mustache-express": "^1.3.0",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
