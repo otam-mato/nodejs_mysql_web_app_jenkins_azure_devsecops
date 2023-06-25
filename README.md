@@ -56,6 +56,9 @@ sudo systemctl enable docker
 sudo systemctl status docker
 ```
 
+<br>
+<br>
+
 ## Restart services:
 
 ```sh
