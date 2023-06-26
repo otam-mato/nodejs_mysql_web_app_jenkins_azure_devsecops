@@ -108,3 +108,8 @@ npm start
 ```
 If you do not set the env vars when starting the app the values 
 from `app/config/config.js` will be used
+
+Troubleshoot: 
+
+https://stackoverflow.com/questions/75702017/my-kubernetes-deployment-keeps-failing-in-jenkins
+
