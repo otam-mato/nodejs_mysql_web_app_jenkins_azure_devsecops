@@ -6,6 +6,7 @@ pipeline {
         dockerhuburl = "montcarotte/jenkins_nodejs_app_demo"
         githuburl = "otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes"
         dockerhubcrd = 'dockerhub'
+        eks_cluster_name = 'demo-eks2'
     }
  
     tools {nodejs "node"}
@@ -20,6 +21,12 @@ pipeline {
         stage('Install dependencies') {
             steps {
                 sh 'npm install'
+            }
+        }
+        
+        stage('Start the app') {
+            steps {
+                sh 'node index.js &'
             }
         }
         
@@ -71,6 +78,15 @@ pipeline {
           steps{
             sh "docker rmi $dockerhuburl:$BUILD_NUMBER"
           }
+        }
+        
+        stage('K8s Deploy') {
+            steps{
+                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'kubern_config', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
+                    sh "aws eks update-kubeconfig --name ${eks_cluster_name}"
+                    sh "kubectl apply -f deployment.yaml"
+                }
+            }
         }
     }
 }
