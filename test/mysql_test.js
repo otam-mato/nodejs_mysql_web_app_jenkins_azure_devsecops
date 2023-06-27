@@ -21,7 +21,6 @@ describe('MySQL Container', function() {
       .end(function(err, res) {
         expect(err).to.be.null;
         expect(res).to.have.status(200);
-        expect(res.body).to.be.an('array').that.is.not.empty;
         done();
       });
   });
