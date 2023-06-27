@@ -1,6 +1,6 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const dbConfig = require("app/config/config.js");
+const dbConfig = require("/var/lib/jenkins/workspace/nodejs pipeline/app/config/config.js");
 
 const expect = chai.expect;
 chai.use(chaiHttp);
