@@ -3,7 +3,6 @@ const chaiHttp = require('chai-http');
 const expect = chai.expect;
 
 chai.use(chaiHttp);
-const { describe, it } = require('mocha');
 
 describe('MySQL Container', function() {
   it('should be able to connect to the database', function(done) {
