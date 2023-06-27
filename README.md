@@ -70,6 +70,14 @@ sudo systemctl daemon-reload
 sudo service docker restart
 ```
 
+<br>
+<br>
+
+## Install MySQL:
+
+```sh
+sudo apt install mariadb-client-core-10.6
+```
 
 # Coffee suppliers sample app
 
