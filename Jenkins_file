@@ -6,7 +6,6 @@ pipeline {
         dockerhuburl = "montcarotte/jenkins_nodejs_app_demo"
         githuburl = "otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes"
         dockerhubcrd = 'dockerhub'
-        eks_cluster_name = 'demo-eks2'
     }
  
     tools {nodejs "node"}
@@ -36,10 +35,20 @@ pipeline {
             }
         }
         
-        stage('Build image') {
+        stage('Build NodeJS image') {
           steps{
             script {
               dockerImage = docker.build(dockerhuburl + ":$BUILD_NUMBER")
+            }
+          }
+        }
+        
+        stage('Build MySQL image') {
+          steps {
+            dir('/var/lib/jenkins/workspace/nodejs pipeline/mysql_container') { 
+              script {
+                dockerImageMySQL = docker.build(dockerhuburl + ":${BUILD_NUMBER}_mysql")
+              }
             }
           }
         }
@@ -63,6 +72,26 @@ pipeline {
             }
         }
         
+        stage('Test MySQL image') {
+          steps {
+            script {
+              // Start the MySQL Docker container
+              def mysqlContainer = docker.image("${dockerhuburl}:${BUILD_NUMBER}_mysql").run("-d")
+              try {
+                // Wait for the container to start running
+                sh 'sleep 10'
+        
+                // Run the test script outside the MySQL container
+                sh "node test/mysql_test.js"
+              } finally {
+                // Stop the MySQL container
+                mysqlContainer.stop()
+              }
+            }
+          }
+        }
+
+        
         stage('Deploy image') {
           steps{
             script {
@@ -83,7 +112,7 @@ pipeline {
         stage('K8s Deploy') {
             steps{
                 withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'kubern_config', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
-                    sh "aws eks update-kubeconfig --name ${eks_cluster_name}"
+                    sh "aws eks update-kubeconfig --name demo-eks2"
                     sh "kubectl apply -f deployment.yaml"
                 }
             }
