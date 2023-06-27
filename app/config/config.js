@@ -1,7 +1,7 @@
 // define default config, but allow overrides from ENV vars
 let config = {
   APP_DB_HOST: "localhost",
-  APP_DB_USER: "admin",
+  APP_DB_USER: "root",
   APP_DB_PORT: "3306" ,
   APP_DB_PASSWORD: "12345678",
   APP_DB_NAME: "COFFEE"
