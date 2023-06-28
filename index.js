@@ -6,7 +6,7 @@ const app = express();
 const mustacheExpress = require("mustache-express")
 const favicon = require('serve-favicon');
 
-const Supplier = require('./models/supplier');
+const Supplier = require('./app/models/supplier');
 
 // parse requests of content-type: application/json
 app.use(bodyParser.json());
