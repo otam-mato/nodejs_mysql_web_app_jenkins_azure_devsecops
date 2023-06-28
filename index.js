@@ -6,6 +6,8 @@ const app = express();
 const mustacheExpress = require("mustache-express")
 const favicon = require('serve-favicon');
 
+const Supplier = require('./models/supplier');
+
 // parse requests of content-type: application/json
 app.use(bodyParser.json());
 // parse requests of content-type: application/x-www-form-urlencoded
@@ -39,6 +41,21 @@ app.post("/supplier-remove/:id", supplier.remove);
 app.use(function (req, res, next) {
     res.status(404).render("404", {});
 })
+
+
+// MySQL database test endpoint
+app.get('/enquiry', (req, res) => {
+  Supplier.getAll((err, suppliers) => {
+    if (err) {
+      // Handle the error if any
+      res.status(500).json({ error: 'Failed to fetch suppliers for enquiry' });
+      return;
+    }
+
+    // Send the suppliers data in JSON format
+    res.json(suppliers);
+  });
+});
 
 
 // set port, listen for requests
