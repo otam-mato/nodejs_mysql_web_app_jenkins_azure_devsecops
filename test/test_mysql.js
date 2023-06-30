@@ -19,9 +19,8 @@ describe('App', function() {
         const supplier = res.body[0]; // Assuming the response contains an array of supplier objects
         expect(supplier).to.have.property('id');
         expect(supplier).to.have.property('name');
-        // Add additional assertions for other properties of the supplier object
-
-
+        expect(supplier.id).to.be.a('number');
+        expect(supplier.name).to.be.a('string');
         done();
       });
    });
