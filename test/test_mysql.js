@@ -14,7 +14,13 @@ describe('App', function() {
         expect(res).to.have.status(200);
         expect(res).to.be.json;
         expect(res.body).to.be.an('array'); // Ensure the response is an array
-        expect(res.body.length).to.be.greaterThan(100); // Ensure the response array is not empty
+        expect(res.body.length).to.be.greaterThan(0); // Ensure the response array is not empty
+        
+        const supplier = res.body[0]; // Assuming the response contains an array of supplier objects
+        expect(supplier).to.have.property('id');
+        expect(supplier).to.have.property('name');
+        // Add additional assertions for other properties of the supplier object
+
 
         done();
       });
