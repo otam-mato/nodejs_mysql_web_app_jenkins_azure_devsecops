@@ -6,8 +6,7 @@ const app = express();
 const mustacheExpress = require("mustache-express")
 const favicon = require('serve-favicon');
 
-// test MySQL connection section
-
+// test MySQL connection section //
 const mysql = require("mysql2");
 const config = require("./app/config/config.js");
 const dbConfig = {
@@ -17,11 +16,9 @@ const dbConfig = {
   password: config.APP_DB_PASSWORD,
   database: config.APP_DB_NAME
 };
-
 // Create a MySQL pool to handle connections
 const pool = mysql.createPool(dbConfig);
-
-// test MySQL connection section
+// end of the test MySQL connection section //
 
 // parse requests of content-type: application/json
 app.use(bodyParser.json());
