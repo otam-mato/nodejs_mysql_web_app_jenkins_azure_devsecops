@@ -6,7 +6,22 @@ const app = express();
 const mustacheExpress = require("mustache-express")
 const favicon = require('serve-favicon');
 
-const Supplier = require("./app/models/supplier.model.js");
+// test MySQL connection section
+
+const mysql = require("mysql2");
+const config = require("./app/config/config.js");
+const dbConfig = {
+  host: config.APP_DB_HOST,
+  port: config.APP_DB_PORT,
+  user: config.APP_DB_USER,
+  password: config.APP_DB_PASSWORD,
+  database: config.APP_DB_NAME
+};
+
+// Create a MySQL pool to handle connections
+const pool = mysql.createPool(dbConfig);
+
+// test MySQL connection section
 
 // parse requests of content-type: application/json
 app.use(bodyParser.json());
@@ -20,6 +35,7 @@ app.set("views", __dirname + "/views")
 app.use(express.static('public'));
 app.use(favicon(__dirname + "/public/img/favicon.ico"));
 
+// APP endpoints
 // list all the suppliers
 app.get("/", (req, res) => {
     res.render("home", {});
@@ -37,24 +53,34 @@ app.get("/supplier-update/:id", supplier.findOne);
 app.post("/supplier-update", supplier.update);
 // receive the POST to delete a supplier
 app.post("/supplier-remove/:id", supplier.remove);
+
+// MySQL database test endpoint
+app.get('/entries', (req, res) => {
+  // Acquire a connection from the pool
+  pool.getConnection((err, connection) => {
+    if (err) {
+      console.error('Error connecting to the database: ', err);
+      res.status(500).json({ error: 'Error connecting to the database' });
+      return;
+    }
+    // Execute the query to retrieve all entries
+    connection.query('SELECT * FROM suppliers', (err, results) => {
+      // Release the connection back to the pool
+      connection.release();
+      if (err) {
+        console.error('Error executing query: ', err);
+        res.status(500).json({ error: 'Error executing query' });
+        return;
+      }
+      // Return the entries as a JSON response
+      res.json(results);
+    });
+  });
+});
+
 // handle 404
 app.use(function (req, res, next) {
     res.status(404).render("404", {});
-});
-
-
-// MySQL database test endpoint
-app.get('/enquiry', (req, res) => {
-  Supplier.getAll((err, suppliers) => {
-    if (err) {
-      // Handle the error if any
-      res.status(500).json({ error: 'Failed to fetch suppliers for enquiry' });
-      return;
-    }
-
-    // Send the suppliers data in JSON format
-    res.json(suppliers);
-  });
 });
 
 
