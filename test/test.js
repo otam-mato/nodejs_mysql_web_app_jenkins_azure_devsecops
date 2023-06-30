@@ -13,6 +13,6 @@ describe('App', function() {
         expect(err).to.be.null;
         expect(res).to.have.status(200);
         done();
-      });
+    });
   });
 });
