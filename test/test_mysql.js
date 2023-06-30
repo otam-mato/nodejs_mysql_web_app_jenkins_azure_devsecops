@@ -24,4 +24,14 @@ describe('App', function() {
         done();
       });
    });
+
+  it('should return the response is an array', function(done) {
+    chai
+      .request('http://localhost:3000')
+      .get('/entries')
+      .end(function(err, res) {
+        expect(res.body).to.be.an('array'); // Ensure the response is an array
+        done();
+      });
+   });
 });
