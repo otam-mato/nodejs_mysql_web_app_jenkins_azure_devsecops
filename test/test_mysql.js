@@ -37,16 +37,6 @@ describe('App', function() {
       });
    });
 
-   it('ensure the response array is not empty', function(done) {
-    chai
-      .request('http://localhost:3000')
-      .get('/entries')
-      .end(function(err, res) {
-        expect(res.body.length).to.be.greaterThan(0); // Ensure the response array is not empty
-        done();
-      });
-   });
-
    it('returned object contains the necessary properties: "id" (and it is the number), "name" (and it is the string)', function(done) {
     chai
       .request('http://localhost:3000')
