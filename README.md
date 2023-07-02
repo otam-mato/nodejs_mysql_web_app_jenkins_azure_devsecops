@@ -97,6 +97,9 @@ sudo mysql -h localhost -u root -p -e "CREATE DATABASE COFFEE;"
 sudo mysql -h localhost -u root -p COFFEE < my_sql.sql
 ```
 
+<br>
+<br>
+
 # Coffee suppliers sample app
 
 ## Summary
