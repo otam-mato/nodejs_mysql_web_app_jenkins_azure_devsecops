@@ -92,12 +92,14 @@ pipeline {
         }
 
         
-        stage('Deploy image') {
+        stage('Deploy images') {
           steps{
             script {
               docker.withRegistry(dockerregistry, dockerhubcrd ) {
                 dockerImage.push("${env.BUILD_NUMBER}")
                 dockerImage.push("latest")
+                dockerImageMySQL.push("${env.BUILD_NUMBER}")
+                dockerImageMySQL.push("latest")
               }
             }
           }
