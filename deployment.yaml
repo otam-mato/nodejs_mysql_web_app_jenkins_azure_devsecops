@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: node-app
-          image: montcarotte/fullstack_nodejs_mysql_demo:node_app
+          image: montcarotte/jenkins_nodejs_app_demo:latest
           ports:
             - containerPort: 3000
           env:
@@ -23,7 +23,7 @@ spec:
             - name: APP_DB_USER
               value: "admin"
         - name: mysql-server
-          image: montcarotte/fullstack_nodejs_mysql_demo:mysql_server_new
+          image: montcarotte/jenkins_nodejs_app_demo:mysql_latest
           ports:
             - containerPort: 3306
           env:
