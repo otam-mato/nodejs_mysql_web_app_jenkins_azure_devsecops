@@ -98,8 +98,8 @@ pipeline {
               docker.withRegistry(dockerregistry, dockerhubcrd ) {
                 dockerImage.push("${env.BUILD_NUMBER}")
                 dockerImage.push("latest")
-                dockerImageMySQL.push("${env.BUILD_NUMBER}")
-                dockerImageMySQL.push("latest")
+                dockerImageMySQL.push("${env.BUILD_NUMBER}_mysql")
+                dockerImageMySQL.push("mysql_latest")
               }
             }
           }
