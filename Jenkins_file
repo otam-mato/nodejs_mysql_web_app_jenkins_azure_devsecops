@@ -106,6 +106,7 @@ pipeline {
         stage('Remove image') {
           steps{
             sh "docker rmi $dockerhuburl:$BUILD_NUMBER"
+            sh "docker rmi ${dockerhuburl}:${BUILD_NUMBER}_mysql"
           }
         }
         
