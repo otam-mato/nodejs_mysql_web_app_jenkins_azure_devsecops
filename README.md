@@ -76,7 +76,25 @@ sudo service docker restart
 ## Install MySQL:
 
 ```sh
-sudo apt install mariadb-client-core-10.6
+sudo apt-get install mysql-server
+sudo systemctl start mysql
+```
+
+```sh
+mysql
+```
+
+```sh
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost';
+ALTER USER 'root'@'localhost' IDENTIFIED BY '12345678';
+```
+
+```sh
+sudo mysql -h localhost -u root -p -e "CREATE DATABASE COFFEE;"
+```
+
+```sh
+sudo mysql -h localhost -u root -p COFFEE < my_sql.sql
 ```
 
 # Coffee suppliers sample app
