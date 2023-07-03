@@ -15,6 +15,11 @@
 <br>
 <br>
 
+<img width="1252" alt="Screenshot 2023-07-03 at 22 01 25" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/d1f1966a-d199-486e-b369-1236847d9703">
+
+<br>
+<br>
+
 ## Install Jenkins:
 
 https://varunmanik1.medium.com/devops-jenkins-aws-series-part-1-how-to-install-jenkins-on-aws-ubuntu-22-04-cb0c3cdb055
