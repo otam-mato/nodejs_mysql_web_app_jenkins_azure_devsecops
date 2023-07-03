@@ -10,7 +10,7 @@
 <br>
 <br>
 
-<img width="1000" alt="Screenshot 2023-07-03 at 21 56 28" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/ca0df255-b590-454e-9362-b75c14b42690">
+<img width="1000" alt="Screenshot 2023-07-03 at 21 58 40" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/ed9614db-812a-4bb6-b0ed-75d6b397a80c">
 
 <br>
 <br>
