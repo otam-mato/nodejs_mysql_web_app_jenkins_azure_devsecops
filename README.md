@@ -24,6 +24,9 @@ Additionally, there are two services: mysql-service and node-app-service. The my
 <br>
 <br>
 
+<img width="1000" alt="Screenshot 2023-07-03 at 22 46 47" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/dfc04ec9-74fe-4146-a0a5-dea8d4ef52f2">
+
+
 ## Install Jenkins:
 
 https://varunmanik1.medium.com/devops-jenkins-aws-series-part-1-how-to-install-jenkins-on-aws-ubuntu-22-04-cb0c3cdb055
