@@ -5,6 +5,10 @@
 
 ## Result
 
+Based on the output of kubectl get all, it appears that Kubernetes deployment and services are running successfully. The my-deployment deployment has two pods, and both pods are running without any restarts.
+
+Additionally, there are two services: mysql-service and node-app-service. The mysql-service is a ClusterIP service with the IP 10.100.66.111 and exposes port 3306 for MySQL. The node-app-service is a LoadBalancer service with an external IP (af8f35f31190b44878e991cf07db6ec9-63904463.us-east-1.elb.amazonaws.com) and forwards traffic from port 80 to my Node.js application.
+
 <img width="1000" alt="Screenshot 2023-07-03 at 21 53 06" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/ccca9a07-e03e-4e4e-a70a-7c5e77c2795a">
 
 <br>
