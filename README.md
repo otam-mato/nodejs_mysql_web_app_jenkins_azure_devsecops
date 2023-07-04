@@ -22,7 +22,7 @@ Additionally, there are two services: mysql-service and node-app-service. The my
 <br>
 <br>
 
-<img width="1000" alt="Screenshot 2023-07-03 at 22 01 25" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/d1f1966a-d199-486e-b369-1236847d9703">
+<img width="1000" alt="Screenshot 2023-07-04 at 19 36 16" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/77eaf4fc-8922-46c7-9410-1d12520729d8">
 
 <br>
 <br>
