@@ -21,7 +21,7 @@ Additionally, there are two services: mysql-service and node-app-service. The my
 
 <br>
 <br>
-The app based on two microservices (a node.js and a MySQL database) is available as well:
+The app based on two microservices (a node.js and a MySQL database) is available as well under the load-balancer DNS name:
 <br>
 <br>
 
