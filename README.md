@@ -21,6 +21,9 @@ Additionally, there are two services: mysql-service and node-app-service. The my
 
 <br>
 <br>
+THe app based on two microservices (a node.js and a MySQL database) is available as well:
+<br>
+<br>
 
 <img width="1000" alt="Screenshot 2023-07-04 at 19 36 16" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/77eaf4fc-8922-46c7-9410-1d12520729d8">
 
