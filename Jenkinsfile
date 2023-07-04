@@ -29,7 +29,7 @@ pipeline {
             }
         }
         
-        stage('Test app') {
+        stage('Test the app') {
             steps {
                 sh 'npm test'
             }
@@ -53,7 +53,7 @@ pipeline {
           }
         }
         
-        stage('Test image') {
+        stage('Test NodeJS image') {
             steps {
                 script {
                     // Start the Docker container
@@ -105,7 +105,7 @@ pipeline {
           }
         }
  
-        stage('Remove image') {
+        stage('Remove images') {
           steps{
             sh "docker rmi ${dockerhuburl}:${BUILD_NUMBER}"
             sh "docker rmi ${dockerhuburl}:${BUILD_NUMBER}_mysql"
