@@ -32,7 +32,9 @@ Additionally, there are two services: mysql-service and node-app-service. The my
 <br>
 <br>
 
-## Install Jenkins:
+## Steps to follow:
+
+### Install Jenkins:
 
 https://varunmanik1.medium.com/devops-jenkins-aws-series-part-1-how-to-install-jenkins-on-aws-ubuntu-22-04-cb0c3cdb055
 
@@ -74,7 +76,7 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 <br>
 <br>
 
-##  Install Docker:
+###  Install Docker:
 
 ```sh
 sudo apt-get update
@@ -88,7 +90,7 @@ sudo systemctl status docker
 <br>
 <br>
 
-## Restart services:
+### Restart services:
 
 ```sh
 newgrp docker
@@ -102,7 +104,7 @@ sudo service docker restart
 <br>
 <br>
 
-## Install MySQL:
+### Install MySQL:
 
 ```sh
 sudo apt-get install mysql-server
