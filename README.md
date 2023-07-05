@@ -70,6 +70,18 @@ describe('App', function() {
 
 2. Test MySQL database
 
+Mocha test cases for testing an API that returns entries from a database. The tests as well use Chai assertions and the Chai HTTP plugin for making HTTP requests and asserting the response.
+
+These test cases verify various aspects of the API's response, including the status code, response format, array structure, non-empty response, and the presence and data types of specific properties in the response objects.
+
+- The first test case is named 'should return all entries in the database as JSON'. It sends an HTTP GET request to 'http://localhost:3000/entries' and asserts that the response has a status code of 200 and is in JSON format.
+
+- The second test case is named 'should return the response is an array'. It sends an HTTP GET request to 'http://localhost:3000/entries' and asserts that the response body is an array.
+
+- The third test case is named 'ensure the response array is not empty'. It sends an HTTP GET request to 'http://localhost:3000/entries' and asserts that the response array has a length greater than 0.
+
+- The fourth test case is named 'returned object contains the necessary properties: "id" (and it is the number), "name" (and it is the string)'. It sends an HTTP GET request to 'http://localhost:3000/entries', assumes the response contains an array of objects, and asserts that the first object in the array has the properties 'id' and 'name'. It further asserts that the 'id' property is a number and the 'name' property is a string.
+
 ```js
 const chai = require('chai');
 const chaiHttp = require('chai-http');
