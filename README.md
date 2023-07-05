@@ -1,5 +1,7 @@
 # The page is under development
 
+<img width="700" alt="Screenshot 2023-07-05 at 19 41 16" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/b6ead01d-4504-4cd5-a2cb-c1f413a8356d">
+
 <br>
 <br>
 
