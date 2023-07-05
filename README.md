@@ -1,7 +1,7 @@
 # The page is under development
 
 
-<img width="700" alt="Screenshot 2023-07-05 at 20 33 36" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/4455d9b7-283b-49a6-a73d-5044ead6cff2">
+
 
 
 <br>
@@ -85,6 +85,10 @@ These test cases verify various aspects of the API's response, including the sta
 - The third test case is named 'ensure the response array is not empty'. It sends an HTTP GET request to 'http://localhost:3000/entries' and asserts that the response array has a length greater than 0.
 
 - The fourth test case is named 'returned object contains the necessary properties: "id" (and it is the number), "name" (and it is the string)'. It sends an HTTP GET request to 'http://localhost:3000/entries', assumes the response contains an array of objects, and asserts that the first object in the array has the properties 'id' and 'name'. It further asserts that the 'id' property is a number and the 'name' property is a string.
+
+To test the MySQL database connection from within the NodeJS app we add one more endpoint `/entries' in index.js file:
+
+<img width="700" alt="Screenshot 2023-07-05 at 20 33 36" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/4455d9b7-283b-49a6-a73d-5044ead6cff2">
 
 ```js
 const chai = require('chai');
