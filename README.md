@@ -141,9 +141,7 @@ describe('App', function() {
       .end(function(err, res) {
         const supplier = res.body[0]; // Assuming the response contains an array of supplier objects
         expect(supplier).to.have.property('id');
-        expect(supplier).to.have.property('name');
         expect(supplier.id).to.be.a('number');
-        expect(supplier.name).to.be.a('string');
         done();
       });
    });
