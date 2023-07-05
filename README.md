@@ -43,7 +43,7 @@ Note: The pipeline assumes the existence of a Jenkins credential with ID 'kubern
 
 1. Test NodeJS app
 
-```
+```js
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 
@@ -66,7 +66,7 @@ describe('App', function() {
 
 2. Test MySQL database
 
-```
+```js
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 
