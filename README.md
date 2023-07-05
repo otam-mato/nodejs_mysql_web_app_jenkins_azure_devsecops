@@ -90,6 +90,10 @@ To test the MySQL database connection from within the NodeJS app we add one more
 
 <img width="700" alt="Screenshot 2023-07-05 at 20 33 36" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/4455d9b7-283b-49a6-a73d-5044ead6cff2">
 
+The call to this endpoint just returns the array of suppliers 'id'
+
+<img width="700" alt="Screenshot 2023-07-05 at 20 48 45" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/a1d0bf74-ce03-4a6a-aaf1-7afa3428a432">
+
 ```js
 const chai = require('chai');
 const chaiHttp = require('chai-http');
