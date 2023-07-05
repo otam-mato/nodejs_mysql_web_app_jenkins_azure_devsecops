@@ -72,7 +72,7 @@ describe('App', function() {
 });
 ```
 
-2. Test MySQL database
+2. Test MySQL database from within the NodeJS app
 
 ```js
 const chai = require('chai');
