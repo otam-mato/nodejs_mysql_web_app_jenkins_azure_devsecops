@@ -5,7 +5,7 @@
 
 ## Description
 
-This Jenkins pipeline script is used to automate the build, test, and deployment process of a Node.js application using Docker and Kubernetes. The break down of the different stages and their functionalities:
+Jenkins pipeline script is used to automate the build, test, and deployment process of a Node.js application using Docker and Kubernetes. The break down of the different stages and their functionalities:
 
 1. **Check out**: This stage checks out the source code from the specified Git repository.
 
