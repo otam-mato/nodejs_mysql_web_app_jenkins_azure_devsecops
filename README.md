@@ -5,6 +5,32 @@
 
 ## Description
 
+This Jenkins pipeline script is used to automate the build, test, and deployment process of a Node.js application using Docker and Kubernetes. The break down of the different stages and their functionalities:
+
+1. **Check out**: This stage checks out the source code from the specified Git repository.
+
+2. **Install dependencies**: This stage installs the Node.js dependencies required by the application using the `npm install` command.
+
+3. **Start the app**: This stage starts the Node.js application using the `node index.js` command. The ampersand (`&`) is used to run the command in the background.
+
+4. **Test the app**: This stage runs the application's tests using the `npm test` command.
+
+5. **Build NodeJS image**: This stage builds a Docker image for the Node.js application. The `docker.build` command is used to build the image with a tag based on the Jenkins build number.
+
+6. **Build MySQL image**: This stage builds a Docker image for MySQL. The MySQL image is built from a separate directory using the `docker.build` command, and the image tag includes the Jenkins build number.
+
+7. **Test NodeJS image**: This stage tests the Node.js Docker image by running the application's tests within a Docker container. The `docker.image().run` command is used to start the container, and the `npx mocha` command is used to execute the tests.
+
+8. **Test MySQL image**: This stage tests the MySQL Docker image by running a separate test script within a Docker container. Similar to the previous stage, the MySQL container is started, and the `npx mocha` command is used to run the tests.
+
+9. **Deploy images**: This stage pushes the built Docker images to a Docker registry. The `docker.withRegistry` block is used to authenticate with the Docker registry, and the `dockerImage.push` command is used to push the Node.js image with tags for the build number and "latest". The same process is repeated for the MySQL image.
+
+10. **Remove images**: This stage removes the local Docker images that were built during the pipeline process using the `docker rmi` command.
+
+11. **K8s Deploy**: This stage deploys the application to a Kubernetes cluster. It configures the Kubernetes context using AWS CLI (`aws eks update-kubeconfig`) and applies the deployment configuration (`kubectl apply -f deployment.yaml`).
+
+Note: The pipeline assumes the existence of a Jenkins credential with ID 'kubern_config' that holds the necessary Kubernetes configuration.
+
 <img width="1000" alt="Screenshot 2023-07-04 at 18 59 37" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/22f1b495-5c8c-43de-90d7-13ec0b83db3f">
 
 
