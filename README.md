@@ -283,34 +283,6 @@ sudo mysql -h localhost -u root -p COFFEE < my_sql.sql
 <br>
 <br>
 
-## 2. Install Docker on an EC2 instance
-
-```
-sudo apt-get update
-sudo apt install gnupg2 pass -y
-sudo apt install docker.io -y
-sudo usermod -aG docker $USER
-newgrp docker
-sudo systemctl start docker
-sudo systemctl enable docker
-sudo systemctl status docker
-```
-
-<br><br>
-install Docker plugins to Jenkins
-
-<img width="700" alt="Screenshot 2023-03-21 at 21 42 16" src="https://user-images.githubusercontent.com/104728608/226748027-f5bff7fa-84fa-41ed-a3b6-b87acf998dfb.png">
-
-<img width="700" alt="Screenshot 2023-03-21 at 21 45 41" src="https://user-images.githubusercontent.com/104728608/226751995-746547c8-d515-42d7-9b47-cd2f5a275a3d.png">
-
-restart services
-```
-sudo usermod -a -G docker jenkins
-sudo service jenkins restart
-sudo systemctl daemon-reload
-sudo service docker restart
-```
-
 <br><br>
 
 ### Create EKS cluster
