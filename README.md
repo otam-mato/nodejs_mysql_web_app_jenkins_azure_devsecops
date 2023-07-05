@@ -31,6 +31,9 @@ This Jenkins pipeline script is used to automate the build, test, and deployment
 
 Note: The pipeline assumes the existence of a Jenkins credential with ID 'kubern_config' that holds the necessary Kubernetes configuration.
 
+<br>
+<br>
+
 <img width="1000" alt="Screenshot 2023-07-04 at 18 59 37" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/22f1b495-5c8c-43de-90d7-13ec0b83db3f">
 
 
