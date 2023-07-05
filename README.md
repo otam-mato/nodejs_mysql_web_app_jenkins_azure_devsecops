@@ -43,6 +43,10 @@ Note: The pipeline assumes the existence of a Jenkins credential with ID 'kubern
 
 1. Test NodeJS app
 
+Mocha test script for testing an application running on port 3000. It uses the Chai assertion library and the Chai HTTP plugin for making HTTP requests and asserting the response.
+
+This test case ensures that when an HTTP GET request is made to 'http://localhost:3000/', the response has a status code of 200 and there are no errors. If any of the assertions fail, the test case will be marked as failed.
+
 ```js
 const chai = require('chai');
 const chaiHttp = require('chai-http');
