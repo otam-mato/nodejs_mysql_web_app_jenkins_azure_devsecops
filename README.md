@@ -51,7 +51,7 @@ Additionally, there are two services: mysql-service and node-app-service. The my
 <br>
 <br>
 
-2. The app based on two microservices (a node.js and a MySQL database) and deployed in the Kubernetes cluster is available as well under the load-balancer DNS name:
+2. The app based on two microservices (a node.js and a MySQL database) and deployed to the Kubernetes cluster is available as well under the load-balancer DNS name:
 
 <br>
 
