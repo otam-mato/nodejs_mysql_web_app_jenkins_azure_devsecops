@@ -74,7 +74,7 @@ describe('App', function() {
 
 2. Test MySQL database
 
-Mocha test cases for testing an API that returns entries from a database. The tests as well use Chai assertions and the Chai HTTP plugin for making HTTP requests and asserting the response.
+Mocha test cases for testing an API that returns id's of entries from a database. The tests as well use Chai assertions and the Chai HTTP plugin for making HTTP requests and asserting the response.
 
 These test cases verify various aspects of the API's response, including the status code, response format, array structure, non-empty response, and the presence and data types of specific properties in the response objects.
 
@@ -84,7 +84,7 @@ These test cases verify various aspects of the API's response, including the sta
 
 - The third test case is named 'ensure the response array is not empty'. It sends an HTTP GET request to 'http://localhost:3000/entries' and asserts that the response array has a length greater than 0.
 
-- The fourth test case is named 'returned object contains the necessary properties: "id" (and it is the number), "name" (and it is the string)'. It sends an HTTP GET request to 'http://localhost:3000/entries', assumes the response contains an array of objects, and asserts that the first object in the array has the properties 'id' and 'name'. It further asserts that the 'id' property is a number and the 'name' property is a string.
+- The fourth test case is named 'returned object contains the necessary properties: "id" (and it is the number)'. It sends an HTTP GET request to 'http://localhost:3000/entries', assumes the response contains an array of objects, and asserts that the first object in the array has the propertiy 'id'. It further asserts that the 'id' property is a number.
 
 To test the MySQL database connection from within the NodeJS app we add one more endpoint `/entries' in index.js file:
 
@@ -134,7 +134,7 @@ describe('App', function() {
       });
    });
 
-   it('returned object contains the necessary properties: "id" (and it is the number), "name" (and it is the string)', function(done) {
+   it('returned object contains the necessary properties: "id" (and it is the number)', function(done) {
     chai
       .request('http://localhost:3000')
       .get('/entries')
