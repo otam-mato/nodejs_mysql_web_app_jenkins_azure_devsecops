@@ -61,7 +61,7 @@ app.get('/entries', (req, res) => {
       return;
     }
     // Execute the query to retrieve all entries
-    connection.query('SELECT * FROM suppliers', (err, results) => {
+    connection.query('SELECT id FROM suppliers', (err, results) => {
       // Release the connection back to the pool
       connection.release();
       if (err) {
