@@ -305,6 +305,9 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY '12345678';
 ```sh
 sudo mysql -h localhost -u root -p -e "CREATE DATABASE COFFEE;"
 ```
+```
+cd /var/lib/jenkins/workspace/nodejs_app_pipeline
+```
 
 ```sh
 sudo mysql -h localhost -u root -p COFFEE < my_sql.sql
