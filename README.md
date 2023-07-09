@@ -1,6 +1,6 @@
 # The page is under development
 
-prerequisites:
+Prerequisites:
 
 * Linux workstation with Node.js and git installed (I’ll use Ubuntu 22.04)
 * Valid GitHub account.
