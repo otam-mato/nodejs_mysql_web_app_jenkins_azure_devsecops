@@ -234,6 +234,8 @@ sudo systemctl enable jenkins
 cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
+<img width="700" alt="Screenshot 2023-04-11 at 14 14 38" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/f6c8cc5f-569d-4e54-a577-e90a74e7ed55">
+
 <br>
 <br>
 
