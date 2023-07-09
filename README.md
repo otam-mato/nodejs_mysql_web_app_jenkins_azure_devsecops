@@ -301,9 +301,9 @@ mysql
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost';
 ALTER USER 'root'@'localhost' IDENTIFIED BY '12345678';
 ```
+
 <details markdown=1><summary markdown="span">Resolving 'access denied' issue </summary>
 
-```
 The output of the `SELECT user, host, plugin FROM mysql.user WHERE user = 'root';` command shows that there are two 'root' user entries with different authentication plugins: 'caching_sha2_password' and 'auth_socket'.
 
 The 'caching_sha2_password' plugin is associated with the 'root' user when connecting from any host ('%'), while the 'auth_socket' plugin is associated with the 'root' user specifically when connecting from the 'localhost' host.
@@ -329,7 +329,6 @@ To resolve the access denied issue, you have a couple of options:
    This command will use the operating system's authentication to verify your credentials. Note that you must run the command from the same host where MySQL is installed.
 
 Choose the option that suits your requirements and preferences. If you have any further questions, please let me know!
-```
 
 </details>
 
