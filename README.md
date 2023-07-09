@@ -1,7 +1,16 @@
 # The page is under development
 
+prerequisites:
+
+– Linux workstation with Node.js and git installed (I’ll use Ubuntu 22.04)
+– Valid GitHub account.
+– Valid DockerHub account. Create a repo called chitchat.
+– Jenkins server with a public IP, git and Docker installed (I’ll use Ubuntu 22.04)
+– Kubernetes cluster running Docker
+
 <br>
 <br>
+
 
 ## Result
 <br>
