@@ -328,8 +328,6 @@ To resolve the access denied issue, you have a couple of options:
 
    This command will use the operating system's authentication to verify your credentials. Note that you must run the command from the same host where MySQL is installed.
 
-Choose the option that suits your requirements and preferences. If you have any further questions, please let me know!
-
 </details>
 
 ```sh
