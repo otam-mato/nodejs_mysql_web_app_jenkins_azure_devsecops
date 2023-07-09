@@ -188,6 +188,8 @@ The call to this endpoint just returns the array of suppliers 'id'
 
 <img width="700" alt="Screenshot 2023-07-05 at 20 48 45" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/a1d0bf74-ce03-4a6a-aaf1-7afa3428a432">
 
+
+
 <br>
 <br>
 
@@ -236,6 +238,8 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 
 <img width="700" alt="Screenshot 2023-07-09 at 14 15 15" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/524b21c0-2078-4abb-a041-faf5b76747bc">
 <img width="700" alt="Screenshot 2023-07-09 at 14 20 35" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/c52f3abd-9538-4332-9c52-09fd00d3bf74">
+<img width="1271" alt="Screenshot 2023-07-09 at 14 22 25" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/3373fc50-a5e8-4592-91b8-b2d742bf7ae1">
+<img width="1271" alt="Screenshot 2023-07-09 at 14 22 25" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/5ba7ab59-7b1e-4f64-80e5-9d3cdd47cc6b">
 
 
 <br>
