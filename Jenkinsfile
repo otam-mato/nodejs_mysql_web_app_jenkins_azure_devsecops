@@ -45,7 +45,7 @@ pipeline {
         
         stage('Build MySQL image') {
           steps {
-            dir('/var/lib/jenkins/workspace/nodejs pipeline/mysql_container') { 
+            dir('/var/lib/jenkins/workspace/nodejs_app_pipeline/mysql_container') { 
               script {
                 dockerImageMySQL = docker.build(dockerhuburl + ":${BUILD_NUMBER}_mysql")
               }
