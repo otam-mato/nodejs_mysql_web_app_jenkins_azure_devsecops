@@ -469,3 +469,4 @@ Troubleshoot:
 
 https://stackoverflow.com/questions/75702017/my-kubernetes-deployment-keeps-failing-in-jenkins
 
+<img width="724" alt="Screenshot 2023-07-10 at 22 02 47" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/9d9a151b-7bf3-4e25-a55b-e105da7fdb7e">
