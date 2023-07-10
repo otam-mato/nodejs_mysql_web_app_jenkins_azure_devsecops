@@ -260,7 +260,7 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ###  Install Docker:
 
-1. Install Docker
+1. Install Docker to the Linux workstation
 
 ```sh
 sudo apt-get update
@@ -271,11 +271,10 @@ sudo systemctl enable docker
 sudo systemctl status docker
 ```
 
-2. Install Docker plugins
+2. Install Docker plugins to Jenkins
    
 <img width="700" alt="Screenshot 2023-07-10 at 21 17 25" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/e29bd21b-4bca-46e0-8342-071167f52ba5">
 <img width="700" alt="Screenshot 2023-07-10 at 21 16 16 1" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/09837d61-60f1-4d57-981f-f2ababedf9d4">
-<img width="700" alt="Screenshot 2023-07-10 at 21 16 16" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/0b8aa02b-1fee-4618-b18e-3182067aaa8b">
 
 <br>
 <br>
