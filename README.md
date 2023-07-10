@@ -272,11 +272,18 @@ sudo systemctl status docker
 ```
 
 2. Install Docker plugins to Jenkins
-   
+
+<br>
+<br>
 <img width="700" alt="Screenshot 2023-07-10 at 21 16 16 1" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/09837d61-60f1-4d57-981f-f2ababedf9d4">
 <img width="700" alt="Screenshot 2023-07-10 at 21 17 25" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/e29bd21b-4bca-46e0-8342-071167f52ba5">
+<br>
+<br>
 
 3. Set up DockerHub credentials
+
+<br>
+<br>
 
 <img width="700" alt="Screenshot 2023-07-10 at 22 15 29" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/f2cee7d0-5901-4257-a196-873e8a85e977">
 <img width="700" alt="Screenshot 2023-07-10 at 22 14 54" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/6481f4b7-35df-43b8-a95e-0009c06b479d">
