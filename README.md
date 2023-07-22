@@ -437,13 +437,12 @@ Troubleshoot:
 
 https://stackoverflow.com/questions/75702017/my-kubernetes-deployment-keeps-failing-in-jenkins
 
-<details markdown=1><summary markdown="span">Resolving 'access denied' issue </summary>
+<details markdown=1><summary markdown="span">Summary of Coffee suppliers sample app</summary>
 
 # Coffee suppliers sample app
 
 ## Summary
 This is a simple CRUD app built with Express.
-
 
 ## Running locally
 
