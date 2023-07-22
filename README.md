@@ -5,7 +5,7 @@ In this demo we create a Jenkins pipeline script that automates the build, test,
 
 The Node.js application is based on two microservices: the frontend interface performing CRUD operations on the backend (MySQL database) and presenting the results.
 
-## <details markdown=1><summary markdown="span">Summary of the Coffee suppliers sample app</summary>
+<details markdown=1><summary markdown="span">Summary of the Coffee suppliers sample app</summary>
 
 # Coffee suppliers sample app
 
@@ -48,7 +48,7 @@ from `app/config/config.js` will be used
 
 <img width="718" alt="Screenshot 2023-07-10 at 22 07 30" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/a637f395-fc50-4a20-a9b8-a9f93498cce7">
 
-## </details>
+</details>
 
 <br>
 
