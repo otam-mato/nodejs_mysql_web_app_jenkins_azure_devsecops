@@ -5,6 +5,8 @@ This repository contains a Jenkins pipeline script that automates the build, tes
 
 The Node.js application is based on two microservices: the frontend interface performing CRUD operations on the backend (MySQL database) and presenting the results.
 
+<br>
+
 ## Prerequisites
 
 To launcch this Jenkins pipeline, you need the following prerequisites:
@@ -14,6 +16,8 @@ To launcch this Jenkins pipeline, you need the following prerequisites:
 - Valid DockerHub account (create a repository called "jenkins_nodejs_app_demo")
 - Jenkins server with a public IP
 - Kubernetes cluster running Docker
+
+<br>
 
 ## Pipeline Overview
 
@@ -51,8 +55,6 @@ Please note that the pipeline assumes the existence of a Jenkins credential with
 <br>
 <br>
 
-<br>
-
 ## Final result
 
 1. Based on the output of the Jenkins deployment as well as ```kubectl get all``` command, Kubernetes deployment and services are running successfully. The ```my-deployment``` deployment has two pods, and both pods are running without any restarts. <br><br> Additionally, there are two services: mysql-service and node-app-service. The mysql-service is a ClusterIP service with the IP 10.100.66.111 and exposes port 3306 for MySQL. The node-app-service is a LoadBalancer service with an external IP (af8f35f31190b44878e991cf07db6ec9-63904463.us-east-1.elb.amazonaws.com) and forwards traffic from port 80 to my Node.js application.
@@ -78,9 +80,6 @@ Please note that the pipeline assumes the existence of a Jenkins credential with
 <br>
 
 <img width="1000" alt="Screenshot 2023-07-04 at 19 21 15" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/27f7291a-f796-44e1-b69b-6628a9102b7c">
-
-<br>
-<br>
 
 <br>
 <br>
