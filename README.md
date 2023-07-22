@@ -85,7 +85,7 @@ Please note that the pipeline assumes the existence of a Jenkins credential with
 
 ## Testing
 
-Test stages to test the app and the builds functionality suggest the following test cases:
+Test stages suggest the following test cases:
 
 1. Test the NodeJS app:
 <br><br>
