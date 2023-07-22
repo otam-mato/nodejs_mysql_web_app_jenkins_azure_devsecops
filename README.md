@@ -60,7 +60,7 @@ To launch this Jenkins pipeline, you need the following prerequisites:
 - Valid GitHub account
 - Valid DockerHub account (create a repository called "jenkins_nodejs_app_demo")
 - Jenkins server with a public IP
-- Kubernetes cluster running Docker
+- Kubernetes cluster (I'm using AWS EKS)
 
 <br>
 
