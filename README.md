@@ -1,5 +1,5 @@
 
-# Jenkins Pipeline for Node.js Application Deployment on Kubernetes
+# Jenkins Pipeline for a Node.js Application Deployment on Kubernetes
 
 This repository contains a Jenkins pipeline script that automates the build, test, and deployment process of a Node.js application using Docker and Kubernetes. The pipeline is designed to run on a Linux workstation and deploy the application to a Kubernetes cluster.
 
