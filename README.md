@@ -45,8 +45,39 @@ Please note that the pipeline assumes the existence of a Jenkins credential with
 
 ## Final result
 
-...
-...
+<br>
+
+1. Based on the output of the Jenkins deployment as well as ```kubectl get all```, Kubernetes deployment and services are running successfully. The ```my-deployment``` deployment has two pods, and both pods are running without any restarts.
+
+Additionally, there are two services: mysql-service and node-app-service. The mysql-service is a ClusterIP service with the IP 10.100.66.111 and exposes port 3306 for MySQL. The node-app-service is a LoadBalancer service with an external IP (af8f35f31190b44878e991cf07db6ec9-63904463.us-east-1.elb.amazonaws.com) and forwards traffic from port 80 to my Node.js application.
+
+<img width="1000" alt="Screenshot 2023-07-04 at 19 31 56" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/cf47a74d-ac54-4b68-bc82-d9888d81b31e">
+
+<br>
+<br>
+
+2. The app is built on two microservices (a node.js and a MySQL database) and deployed to the Kubernetes cluster is available under the load-balancer DNS name:
+
+<br>
+
+<img width="1000" alt="Screenshot 2023-07-04 at 19 28 25" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/df3db4ce-5a88-40c6-a6d9-cf482b5cb4ff">
+
+<br>
+<br>
+
+
+<img width="1000" alt="Screenshot 2023-07-04 at 19 36 16" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/77eaf4fc-8922-46c7-9410-1d12520729d8">
+
+<br>
+<br>
+
+<img width="1000" alt="Screenshot 2023-07-04 at 19 21 15" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/27f7291a-f796-44e1-b69b-6628a9102b7c">
+
+<br>
+<br>
+
+<br>
+<br>
 
 
 ## Getting Started
