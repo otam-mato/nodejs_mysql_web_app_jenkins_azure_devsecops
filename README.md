@@ -116,7 +116,7 @@ describe('App', function() {
 });
 ```
 
-2. Test MySQL database from within the NodeJS app
+2. Test MySQL database to send a request from within the NodeJS app
 
 ```js
 const chai = require('chai');
