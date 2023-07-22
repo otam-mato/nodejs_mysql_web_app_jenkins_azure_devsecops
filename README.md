@@ -7,12 +7,12 @@ The Node.js application is based on two microservices: the frontend interface pe
 
 ## Prerequisites
 
-To use this Jenkins pipeline, you need the following prerequisites:
+To launcch this Jenkins pipeline, you need the following prerequisites:
 
-- Linux workstation with Node.js and Git installed (Ubuntu 22.04)
+- Linux workstation with Node.js, Git and Docker installed (Ubuntu 22.04)
 - Valid GitHub account
 - Valid DockerHub account (create a repository called "jenkins_nodejs_app_demo")
-- Jenkins server with a public IP, Git, and Docker installed (Ubuntu 22.04)
+- Jenkins server with a public IP
 - Kubernetes cluster running Docker
 
 ## Pipeline Overview
@@ -42,6 +42,12 @@ The Jenkins pipeline script consists of several stages, each responsible for a s
 11. **K8s Deploy**: This stage deploys the application to a Kubernetes cluster. It configures the Kubernetes context using AWS CLI (`aws eks update-kubeconfig`) and applies the deployment configuration (`kubectl apply -f deployment.yaml`).
 
 Please note that the pipeline assumes the existence of a Jenkins credential with the ID 'kubern_config' that holds the necessary Kubernetes configuration.
+
+## Final result
+
+...
+...
+
 
 ## Getting Started
 
