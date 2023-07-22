@@ -5,6 +5,51 @@ This repository contains a Jenkins pipeline script that automates the build, tes
 
 The Node.js application is based on two microservices: the frontend interface performing CRUD operations on the backend (MySQL database) and presenting the results.
 
+<details markdown=1><summary markdown="span">Summary of Coffee suppliers sample app</summary>
+
+# Coffee suppliers sample app
+
+## Summary
+This is a simple CRUD app built with Express.
+
+## Running locally
+
+### 1. Build the local Db
+```sql
+create DATABASE COFFEE;
+use coffee;
+create table suppliers(
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  address VARCHAR(255) NOT NULL,
+  city VARCHAR(255) NOT NULL,
+  state VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  phone VARCHAR(100) NOT NULL,
+  PRIMARY KEY ( id )
+);
+```
+
+### 2. Install and run the server
+```zsh
+npm install
+
+# define your db vars at start
+APP_DB_HOST=localhost \
+APP_DB_USER=root \
+APP_DB_PASSWORD="" \
+APP_DB_NAME=COFFEE \
+npm start
+```
+If you do not set the env vars when starting the app the values 
+from `app/config/config.js` will be used
+
+### 3. The app files' structure:
+
+<img width="718" alt="Screenshot 2023-07-10 at 22 07 30" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/a637f395-fc50-4a20-a9b8-a9f93498cce7">
+
+</details>
+
 <br>
 
 ## Prerequisites
@@ -437,47 +482,3 @@ Troubleshoot:
 
 https://stackoverflow.com/questions/75702017/my-kubernetes-deployment-keeps-failing-in-jenkins
 
-<details markdown=1><summary markdown="span">Summary of Coffee suppliers sample app</summary>
-
-# Coffee suppliers sample app
-
-## Summary
-This is a simple CRUD app built with Express.
-
-## Running locally
-
-### 1. Build the local Db
-```sql
-create DATABASE COFFEE;
-use coffee;
-create table suppliers(
-  id INT NOT NULL AUTO_INCREMENT,
-  name VARCHAR(255) NOT NULL,
-  address VARCHAR(255) NOT NULL,
-  city VARCHAR(255) NOT NULL,
-  state VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
-  phone VARCHAR(100) NOT NULL,
-  PRIMARY KEY ( id )
-);
-```
-
-### 2. Install and run the server
-```zsh
-npm install
-
-# define your db vars at start
-APP_DB_HOST=localhost \
-APP_DB_USER=root \
-APP_DB_PASSWORD="" \
-APP_DB_NAME=COFFEE \
-npm start
-```
-If you do not set the env vars when starting the app the values 
-from `app/config/config.js` will be used
-
-### 3. The app files' structure:
-
-<img width="718" alt="Screenshot 2023-07-10 at 22 07 30" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/a637f395-fc50-4a20-a9b8-a9f93498cce7">
-
-</details>
