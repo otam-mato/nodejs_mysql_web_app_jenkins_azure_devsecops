@@ -5,6 +5,8 @@ In this demo we create a Jenkins pipeline script that automates the build, test,
 
 The Node.js application is based on two microservices: the frontend interface performing CRUD operations on the backend (MySQL database) and presenting the results.
 
+<img width="1000" alt="Screenshot 2023-07-22 at 17 16 59" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/b780b79a-88bc-46fc-8b9a-ee4ddcfbba10">
+
 <details markdown=1><summary markdown="span">Summary of the Coffee suppliers sample app</summary>
 
 # Coffee suppliers sample app
