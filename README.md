@@ -133,7 +133,7 @@ Please note that the pipeline assumes the existence of a Jenkins credential with
 <br>
 <br>
 
-## Testing
+## Test stages
 
 Test stages suggest the following test cases:
 
