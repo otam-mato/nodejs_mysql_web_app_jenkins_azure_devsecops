@@ -433,6 +433,9 @@ save /var/lib/jenkins/.kube/config content at your local machine in kubeconfig_m
 
 <img width="700" alt="Screenshot 2023-03-22 at 08 51 00" src="https://user-images.githubusercontent.com/104728608/226849926-e84e642c-3245-4c90-a363-d7eff1243920.png">
 
+Troubleshoot: 
+
+https://stackoverflow.com/questions/75702017/my-kubernetes-deployment-keeps-failing-in-jenkins
 
 
 # Coffee suppliers sample app
