@@ -50,7 +50,9 @@ from `app/config/config.js` will be used
 
 </details>
 
-<img width="1000" alt="Screenshot 2023-07-22 at 17 16 59" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/b780b79a-88bc-46fc-8b9a-ee4ddcfbba10">
+
+<img width="1000" alt="Screenshot 2023-07-22 at 17 21 11" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/489dbe82-d3e3-4636-823d-ca92aa578667">
+
 
 <br>
 
