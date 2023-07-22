@@ -604,7 +604,7 @@ pipeline {
         stage('K8s Deploy') {
             steps{
                 withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'kubern_config', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
-                    sh "aws eks update-kubeconfig --name demo-eks1"
+                    sh "aws eks update-kubeconfig --name demo-eks"
                     sh "kubectl apply -f deployment.yaml"
                 }
             }
