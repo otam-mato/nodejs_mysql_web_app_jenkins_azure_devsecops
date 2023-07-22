@@ -486,7 +486,7 @@ https://stackoverflow.com/questions/75702017/my-kubernetes-deployment-keeps-fail
 
 <details markdown=1><summary markdown="span">Jenkinsfile</summary>
 
-```Jenkins
+```json
 pipeline {
     agent any
     
