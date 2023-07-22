@@ -89,10 +89,10 @@ Please note that the pipeline assumes the existence of a Jenkins credential with
 
 To test the app and functionality of the builds we implement the test stages with the following test cases:
 
-1. To test the NodeJS app:
+1. Test the NodeJS app:
 <br><br>
 Mocha test script for testing an application running on port 3000. It uses the Chai assertion library and the Chai HTTP plugin for making HTTP requests and asserting the response.
-
+<br><br>
 This test case ensures that when an HTTP GET request is made to 'http://localhost:3000/', the response has a status code of 200 and there are no errors. If any of the assertions fail, the test case will be marked as failed.
 
 ```js
