@@ -240,7 +240,7 @@ The call to this endpoint just returns the array of suppliers 'id'
 
 ## Steps to follow:
 
-### Install Jenkins:
+### 1. Install Jenkins:
 
 https://varunmanik1.medium.com/devops-jenkins-aws-series-part-1-how-to-install-jenkins-on-aws-ubuntu-22-04-cb0c3cdb055
 
@@ -300,7 +300,7 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 <br>
 <br>
 
-###  Install Docker:
+###  2. Install Docker:
 
 1. Install Docker to the Linux workstation
 
@@ -332,7 +332,7 @@ sudo systemctl status docker
 <br>
 
 
-### Restart services:
+### 3. Restart services:
 
 ```sh
 newgrp docker
@@ -347,7 +347,7 @@ sudo service docker restart
 <br>
 
 
-### Install MySQL:
+### 4. Install MySQL:
 
 ```sh
 sudo apt-get install mysql-server
@@ -407,7 +407,7 @@ sudo mysql -h localhost -u root -p COFFEE < my_sql.sql
 
 <br><br>
 
-### Create EKS cluster
+### 5. Create EKS cluster
 
 Install the AWS CLI version 2 on EC2
 
@@ -482,3 +482,11 @@ Troubleshoot:
 
 https://stackoverflow.com/questions/75702017/my-kubernetes-deployment-keeps-failing-in-jenkins
 
+### 6. Launch the declarative Jenkins Pipeline script 
+
+<details markdown=1><summary markdown="span">Jenkinsfile</summary>
+
+```
+```
+
+</details>
