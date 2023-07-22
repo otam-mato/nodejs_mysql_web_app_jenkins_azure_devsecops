@@ -43,9 +43,9 @@ The Jenkins pipeline script consists of several stages, each responsible for a s
 
 Please note that the pipeline assumes the existence of a Jenkins credential with the ID 'kubern_config' that holds the necessary Kubernetes configuration.
 
-## Final result
-
 <br>
+
+## Final result
 
 1. Based on the output of the Jenkins deployment as well as ```kubectl get all```, Kubernetes deployment and services are running successfully. The ```my-deployment``` deployment has two pods, and both pods are running without any restarts.
 
