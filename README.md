@@ -9,7 +9,7 @@ The Node.js application is based on two microservices: the frontend interface pe
 
 ## Prerequisites
 
-To launcch this Jenkins pipeline, you need the following prerequisites:
+To launch this Jenkins pipeline, you need the following prerequisites:
 
 - Linux workstation with Node.js, Git and Docker installed (I'm using Ubuntu 22.04)
 - Valid GitHub account
