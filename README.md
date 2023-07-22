@@ -482,7 +482,7 @@ Troubleshoot:
 
 https://stackoverflow.com/questions/75702017/my-kubernetes-deployment-keeps-failing-in-jenkins
 
-### 6. Launch the declarative Jenkins Pipeline script 
+### 6. Configure and launch the declarative Jenkins Pipeline script 
 
 <details markdown=1><summary markdown="span">Jenkinsfile</summary>
 
