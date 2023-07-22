@@ -139,7 +139,7 @@ Test stages suggest the following test cases:
 
 1. Test the NodeJS app:
 <br><br>
-Mocha test script for testing an application running on port 3000. It uses the Chai assertion library and the Chai HTTP plugin for making HTTP requests and asserting the response.
+Mocha test script for testing the application running on port 3000. It uses the Chai assertion library and the Chai HTTP plugin for making HTTP requests and asserting the response.
 <br><br>
 This test case ensures that when an HTTP GET request is made to 'http://localhost:3000/', the response has a status code of 200 and there are no errors. If any of the assertions fail, the test case will be marked as failed.
 
