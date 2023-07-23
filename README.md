@@ -133,6 +133,11 @@ Please note that the pipeline assumes the existence of a Jenkins credential with
 <br>
 <br>
 
+3. The Docker images are built and pushed to the DockerHub
+
+<img width="1000" alt="Screenshot 2023-07-23 at 20 15 10" src="https://github.com/otammato/4_Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/af8dd75e-ff7c-4c78-9cf5-ea9e6774ea7c">
+
+
 ## Test stages
 
 Test stages involve the following test cases:
