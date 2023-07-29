@@ -52,6 +52,22 @@ from `app/config/config.js` will be used
 
 <br>
 
+## Technologies used
+
+- Jenkins
+- Git
+- Docker
+- DockerHub
+- Kubernetes
+- NodeJS
+- MySQL
+- Mocha, Chai
+- AWS Cloud
+- AWS EKS
+- AWS EC2 Ubuntu 22.04
+
+<br>
+
 ## Prerequisites
 
 To launch this Jenkins pipeline, you need the following prerequisites:
