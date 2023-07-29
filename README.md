@@ -61,10 +61,10 @@ from `app/config/config.js` will be used
 - Kubernetes
 - NodeJS
 - MySQL
-- Mocha, Chai
+- JS + Mocha, Chai
 - AWS Cloud
 - AWS EKS
-- AWS EC2 Ubuntu 22.04
+- AWS EC2 (Linux Ubuntu 22.04)
 
 <br>
 
