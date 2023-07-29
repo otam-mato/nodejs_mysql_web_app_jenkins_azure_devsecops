@@ -82,6 +82,8 @@ To launch this Jenkins pipeline, you need the following prerequisites:
 
 ## Pipeline Overview
 
+<img width="1000" alt="Screenshot 2023-07-29 at 14 39 50" src="https://github.com/otammato/4_Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/03d7748d-6855-4508-bfc0-0c10484cc838">
+
 <img width="1000" alt="Screenshot 2023-07-22 at 17 21 11" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/489dbe82-d3e3-4636-823d-ca92aa578667">
 <img width="1000" alt="Screenshot 2023-07-04 at 18 59 37" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/22f1b495-5c8c-43de-90d7-13ec0b83db3f">
 
