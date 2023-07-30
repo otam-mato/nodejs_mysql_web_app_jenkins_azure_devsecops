@@ -642,4 +642,4 @@ pipeline {
 
 </details>
 
-<img width="1000" alt="Screenshot 2023-07-30 at 14 24 45" src="https://github.com/otammato/4_Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/fbbfcbef-20f6-45f6-984a-4b6961704b5e">
+<img width="700" alt="Screenshot 2023-07-30 at 14 24 45" src="https://github.com/otammato/4_Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/fbbfcbef-20f6-45f6-984a-4b6961704b5e">
