@@ -1,6 +1,7 @@
 
 # Jenkins Pipeline for a Node.js Application Deployment on Kubernetes
 
+
 In this demo we create a Jenkins pipeline script that automates the build, test, and deployment process of a Node.js application using Docker and Kubernetes. The pipeline is designed to run on a Linux workstation, build Docker images, test the app with Mocha+Chai libraries and deploy the app to a Kubernetes cluster running on AWS EKS.
 
 The Node.js application is based on two microservices: the frontend interface performing CRUD operations on the backend (MySQL database) and rendering the results.
@@ -640,3 +641,5 @@ pipeline {
 ```
 
 </details>
+
+<img width="1000" alt="Screenshot 2023-07-30 at 14 24 45" src="https://github.com/otammato/4_Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/fbbfcbef-20f6-45f6-984a-4b6961704b5e">
