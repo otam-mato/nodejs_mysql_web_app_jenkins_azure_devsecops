@@ -4,7 +4,7 @@ const chaiHttp = require('chai-http');
 const expect = chai.expect;
 chai.use(chaiHttp);
 
-describe('App', function() {
+describe('End-to-end', function() {
   it('should return all entries in the database as JSON', function(done) {
     chai
       .request('http://localhost:3000')
