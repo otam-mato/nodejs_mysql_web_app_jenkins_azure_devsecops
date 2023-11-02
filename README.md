@@ -28,3 +28,16 @@
 </p>
 
 <br>
+
+## Technologies used
+- **Jenkins**
+- **Node.JS**
+- **Express**
+- **Mocha**
+- **Chai**
+- **JavaScript**
+- **MySQL**
+- **Docker**
+- **AWS**
+- **EC2**
+<br>
