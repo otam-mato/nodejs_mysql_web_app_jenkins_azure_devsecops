@@ -20,3 +20,11 @@
 3. **Pushing built images to Docker Hub and deploying them to a Kubernetes Cluster launched on Amazon EKS:** <br>
    Following successful testing, the built Docker images are pushed to Docker Hub for versioning and storage. Then, utilizing Jenkins, the images are deployed to a Kubernetes Cluster running on Amazon EKS. 
 <br>
+
+## Flow Diagram
+
+<p align="center">
+  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/assets/113034133/d3e8a3ca-2e4d-48ee-be67-e3b0263e7ac8" width="800px"/>
+</p>
+
+<br>
