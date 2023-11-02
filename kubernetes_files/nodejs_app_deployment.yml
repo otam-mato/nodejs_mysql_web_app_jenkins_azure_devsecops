@@ -1,1 +1,25 @@
-
+# Node.js Application Deployment v1
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app-deployment-v1
+spec:
+  replicas: 2 # You can adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: node-app
+  template:
+    metadata:
+      labels:
+        app: node-app
+    spec:
+      containers:
+        - name: node-app
+          image: montcarotte/fullstack_nodejs_mysql_demo:node_app_v1 # make sure you are pulling the v1 image
+          ports:
+            - containerPort: 3000
+          env:
+            - name: APP_DB_HOST
+              value: mysql-service # Use the service name to reach the MySQL pod
+            - name: APP_DB_USER
+              value: "admin"
