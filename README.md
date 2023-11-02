@@ -87,3 +87,8 @@ The app sets up a web server for a supplier management system. It allows viewing
    - The server comes to life, starts listening for visits, and announces its awakening with a log message.
 
 </details>
+
+**<details markdown=1><summary markdown="span">Testing solution description</summary>**
+
+
+</details>
