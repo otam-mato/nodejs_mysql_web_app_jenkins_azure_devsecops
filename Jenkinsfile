@@ -116,7 +116,10 @@ pipeline {
             steps{
                 withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'kubern_config', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
                     sh "aws eks update-kubeconfig --name demo-eks1"
-                    sh "kubectl apply -f deployment.yaml"
+                    sh "kubectl apply -f /kubernetes_files/mysql_secret.yml"
+                    sh "kubectl apply -f /kubernetes_files/mysqldb_deployment.yml"
+                    sh "kubectl apply -f /kubernetes_files/nodejs_app_deployment.yml"
+                    sh "kubectl apply -f /kubernetes_files/services.yml"
                 }
             }
         }
