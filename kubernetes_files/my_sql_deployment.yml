@@ -1,0 +1,30 @@
+# MySQL Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deployment
+spec:
+  replicas: 1 # If you increase the number of replicas, please note the more advanced set up will be needed for using the same database set in all pods
+  selector:
+    matchLabels:
+      app: mysql-app
+  template:
+    metadata:
+      labels:
+        app: mysql-app
+    spec:
+      containers:
+        - name: mysql-server
+          image: montcarotte/fullstack_nodejs_mysql_demo:mysql_server_new
+          ports:
+            - containerPort: 3306
+          env:
+            - name: APP_DB_HOST
+              value: mysql-service
+            - name: APP_DB_USER
+              value: "admin"
+            - name: APP_DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret # make sure you applied mysql-secret.yml to make this deployment work, it uses data from the file
+                  key: password 
