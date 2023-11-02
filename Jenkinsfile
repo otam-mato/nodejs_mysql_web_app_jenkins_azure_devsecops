@@ -63,7 +63,7 @@ pipeline {
                         sh 'sleep 10'
                         
                         // Run the test command outside the container
-                        sh "npx mocha test/test.js"
+                        sh "npx mocha test/unit-test.js"
                     } finally {
                         // Stop the container
                         container.stop()
@@ -82,7 +82,7 @@ pipeline {
                 sh 'sleep 10'
         
                 // Run the test script outside the MySQL container
-                sh "npx mocha test/test_mysql.js"
+                sh "npx mocha test/end-to-end-test.js"
               } finally {
                 // Stop the MySQL container
                 mysqlContainer.stop()
