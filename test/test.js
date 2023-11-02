@@ -4,7 +4,7 @@ const chaiHttp = require('chai-http');
 const expect = chai.expect;
 chai.use(chaiHttp);
 
-describe('App', function() {
+describe('Unit test', function() {
   it('should be running on port 3000', function(done) {
     chai
       .request('http://localhost:3000')
