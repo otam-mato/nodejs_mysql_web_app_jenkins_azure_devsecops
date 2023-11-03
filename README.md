@@ -126,6 +126,9 @@ Test stages involve the following test cases:
 
 </details>
 
+<br>
+<br>
+
 ## Prerequisites
 
 - A work station or an **EC2** instance.
