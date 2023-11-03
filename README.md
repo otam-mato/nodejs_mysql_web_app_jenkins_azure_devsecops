@@ -125,3 +125,55 @@ Test stages involve the following test cases:
    <br>
 
 </details>
+
+## Prerequisites
+
+- A work station or an **EC2** instance.
+  
+- EKS Cluster ready
+   
+- Install **Jenkins**
+
+  **<details markdown=1><summary markdown="span">click for details</summary>**
+  
+   **RHEL:**
+  
+   ```
+   sudo yum install python3-pip python3-devel gcc
+   ```
+   ```
+   sudo pip3 install ansible
+   ```
+   ```
+   sudo yum install -y docker
+   ```
+   ```
+   sudo systemctl start docker
+   ```
+   ```
+   sudo usermod -aG docker $USER
+   ```
+   
+   **Ubuntu 22.04 :**
+
+   ```
+   sudo apt-get install ansible
+   ```
+   ```
+   ansible-galaxy collection install community.docker
+   ```
+   ```
+   sudo apt install python3-pip
+   ```
+   ```
+   sudo pip3 install docker
+   ```
+   ```
+   sudo usermod -aG docker $USER
+   ```
+
+  </details>
+
+- Install **Docker**
+
+<br>
