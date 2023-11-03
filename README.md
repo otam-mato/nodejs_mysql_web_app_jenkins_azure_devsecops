@@ -98,26 +98,26 @@ Test stages involve the following test cases:
    <br><br>
    This test case ensures that when an HTTP GET request is made to 'http://localhost:3000/', the response has a status code of 200 and there are no errors. If any of the assertions fail, the test case will be marked as failed.
    
-   ```js
-   const chai = require('chai');
-   const chaiHttp = require('chai-http');
-   
-   const expect = chai.expect;
-   chai.use(chaiHttp);
-   
-   describe('App', function() {
-     it('should be running on port 3000', function(done) {
-       chai
-         .request('http://localhost:3000')
-         .get('/')
-         .end(function(err, res) {
-           expect(err).to.be.null;
-           expect(res).to.have.status(200);
-           done();
-       });
-     });
-   });
-   ```
+      ```js
+      const chai = require('chai');
+      const chaiHttp = require('chai-http');
+      
+      const expect = chai.expect;
+      chai.use(chaiHttp);
+      
+      describe('App', function() {
+        it('should be running on port 3000', function(done) {
+          chai
+            .request('http://localhost:3000')
+            .get('/')
+            .end(function(err, res) {
+              expect(err).to.be.null;
+              expect(res).to.have.status(200);
+              done();
+          });
+        });
+      });
+      ```
    
    2. **End-to-end test examples. Test MySQL database to send a request from within the NodeJS app**
 
