@@ -94,7 +94,6 @@ Test stages involve the following test cases:
 
    1. **Unit testing example. Test the NodeJS app:**
    <br><br>
-
    [**unit_test.js**](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/blob/697c67da869b96e3061374cb682384946fc47430/test/unit-test.js)
    
    **Mocha** test script for testing the application running on port 3000. It uses the **Chai** assertion library and the Chai HTTP plugin for making HTTP requests and asserting the response.
