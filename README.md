@@ -24,7 +24,7 @@
 ## Flow Diagram
 
 <p align="center">
-  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_prometheus_grafana_ansible/assets/113034133/6a0e37d0-e467-4e22-99e8-8afcb9db98f1" width="800px"/>
+  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/assets/113034133/1e6b100e-cc20-4e5b-80f5-8932cf9ca4dd" width="800px"/>
 </p>
 
 <br>
