@@ -133,9 +133,9 @@ Test stages involve the following test cases:
 
 - A work station or an **EC2** instance.
   
-- Install **Jenkins**
+- Install and configure **Jenkins**
 
-  **<details markdown=1><summary markdown="span">click for details</summary>**
+  **<details markdown=1><summary markdown="span">Install and configure Jenkins</summary>**
   
    https://varunmanik1.medium.com/devops-jenkins-aws-series-part-1-how-to-install-jenkins-on-aws-ubuntu-22-04-cb0c3cdb055
 
