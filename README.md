@@ -98,7 +98,7 @@ Test stages involve the following test cases:
    <br><br>
    This test case ensures that when an HTTP GET request is made to 'http://localhost:3000/', the response has a status code of 200 and there are no errors. If any of the assertions fail, the test case will be marked as failed.
    
-      [unit_test.js](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/blob/697c67da869b96e3061374cb682384946fc47430/test/unit-test.js)
+      [**unit_test.js**](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/blob/697c67da869b96e3061374cb682384946fc47430/test/unit-test.js)
    
    2. **End-to-end test examples. Test MySQL database to send a request from within the NodeJS app**
 
