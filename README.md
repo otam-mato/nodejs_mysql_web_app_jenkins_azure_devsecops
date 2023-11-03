@@ -132,9 +132,9 @@ Test stages involve the following test cases:
   
 - EKS Cluster ready
 
-**<details markdown=1><summary markdown="span">Install the AWS CLI version 2 on EC2</summary>**
+   **<details markdown=1><summary markdown="span">Install the AWS CLI version 2 on EC2</summary>**
   
-  Install the AWS CLI version 2 on EC2
+   Install the AWS CLI version 2 on EC2
 
    ```
    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" 
