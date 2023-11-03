@@ -118,59 +118,7 @@ Test stages involve the following test cases:
          
          <img width="700" alt="Screenshot 2023-07-05 at 20 33 36" src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/assets/113034133/765e8c4d-574a-4843-aea1-e70fc2bacaad">
          
-         ```js
-         const chai = require('chai');
-         const chaiHttp = require('chai-http');
-         
-         const expect = chai.expect;
-         chai.use(chaiHttp);
-         
-         describe('App', function() {
-           it('should return all entries in the database as JSON', function(done) {
-             chai
-               .request('http://localhost:3000')
-               .get('/entries')
-               .end(function(err, res) {
-                 expect(err).to.be.null;
-                 expect(res).to.have.status(200);
-                 expect(res).to.be.json;
-                 done();
-               });
-            });
-         
-           it('should return the response is an array', function(done) {
-             chai
-               .request('http://localhost:3000')
-               .get('/entries')
-               .end(function(err, res) {
-                 expect(res.body).to.be.an('array'); // Ensure the response is an array
-                 done();
-               });
-            });
-         
-            it('ensure the response array is not empty', function(done) {
-             chai
-               .request('http://localhost:3000')
-               .get('/entries')
-               .end(function(err, res) {
-                 expect(res.body.length).to.be.greaterThan(0); // Ensure the response array is not empty
-                 done();
-               });
-            });
-         
-            it('returned object contains the necessary properties: "id" (and it is the number)', function(done) {
-             chai
-               .request('http://localhost:3000')
-               .get('/entries')
-               .end(function(err, res) {
-                 const supplier = res.body[0]; // Assuming the response contains an array of supplier objects
-                 expect(supplier).to.have.property('id');
-                 expect(supplier.id).to.be.a('number');
-                 done();
-               });
-            });
-         });
-         ```
+         [**end-to-end-test.js**](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/blob/8cfbcb23d155ae9f6dc30ae170400d73dcd1ea0e/test/end-to-end-test.js)
    
    <br>
    <br>
