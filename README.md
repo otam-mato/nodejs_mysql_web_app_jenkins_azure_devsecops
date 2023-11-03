@@ -130,7 +130,121 @@ Test stages involve the following test cases:
 
 - A work station or an **EC2** instance.
   
-- EKS Cluster ready
+- Install **Jenkins**
+
+  **<details markdown=1><summary markdown="span">click for details</summary>**
+  
+   https://varunmanik1.medium.com/devops-jenkins-aws-series-part-1-how-to-install-jenkins-on-aws-ubuntu-22-04-cb0c3cdb055
+
+   1. Install Java: Jenkins requires Java to run, so the first step is to install Java on the Ubuntu instance. You can do this by running the following command:
+   
+   ```sh
+   sudo apt-get update
+   sudo apt-get install openjdk-11-jdk
+   ```
+   
+   2. Add Jenkins repository: Next, you need to add the Jenkins repository to the instance by running the following commands:
+   
+   ```sh
+   sudo curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee   /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+   sudo echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]   https://pkg.jenkins.io/debian-stable binary/ | sudo tee   /etc/apt/sources.list.d/jenkins.list > /dev/null
+   ```
+   3. Install Jenkins: Now you can install Jenkins by running the following command:
+   
+   ```sh
+   sudo apt-get update
+   sudo apt-get install jenkins
+   ```
+   4. Start Jenkins: Once Jenkins is installed, start & enable the Jenkins service using the following command:
+   
+   ```sh
+   sudo systemctl start jenkins
+   
+   sudo systemctl status jenkins
+   
+   sudo systemctl enable jenkins
+   ```
+   
+   5. Configure Jenkins:
+   
+   ```
+   cat /var/lib/jenkins/secrets/initialAdminPassword
+   ```
+   
+   <img width="700" alt="Screenshot 2023-07-09 at 14 15 15" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/524b21c0-2078-4abb-a041-faf5b76747bc">
+   <img width="700" alt="Screenshot 2023-07-09 at 14 20 35" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/c52f3abd-9538-4332-9c52-09fd00d3bf74">
+   
+   6. Create the pipeline
+   
+   <img width="700" alt="Screenshot 2023-07-09 at 14 22 25" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/3373fc50-a5e8-4592-91b8-b2d742bf7ae1">
+   <img width="700" alt="Screenshot 2023-07-09 at 14 23 43" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/2784771c-ff58-4c1a-88dc-3bc69ca80b23">
+   
+   7. Install NodeJS plugin
+   
+   <img width="700" alt="Screenshot 2023-07-09 at 14 27 48" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/7d60d4d4-cf66-44e2-a709-706de9d38cde">
+   <img width="700" alt="Screenshot 2023-07-09 at 14 32 01" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/1f2a7724-1700-45dc-abb5-ebc550f42551">
+   
+   8. Activate and configure NodeJS plugin
+   
+   <img width="700" alt="Screenshot 2023-07-09 at 14 32 29" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/784955ad-375d-4427-8596-a6db8abaa54b">
+   <img width="700" alt="Screenshot 2023-07-09 at 14 34 20" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/ee4ea1f7-164a-44d1-a382-2f267299753b">
+   
+   <br>
+   <br>
+
+  </details>
+
+- Install **Docker**
+
+  **<details markdown=1><summary markdown="span">Install Docker to the Linux workstation</summary>**
+
+  1. Install Docker to the Linux workstation
+
+   ```sh
+   sudo apt-get update
+   sudo apt install gnupg2 pass -y
+   sudo apt install docker.io -y
+   sudo systemctl start docker
+   sudo systemctl enable docker
+   sudo systemctl status docker
+   ```
+   <br>
+   <br>
+   
+   2. Install Docker plugins to Jenkins
+   
+   
+   <img width="700" alt="Screenshot 2023-07-10 at 21 16 16 1" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/09837d61-60f1-4d57-981f-f2ababedf9d4">
+   <img width="700" alt="Screenshot 2023-07-10 at 21 17 25" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/e29bd21b-4bca-46e0-8342-071167f52ba5">
+   <br>
+   <br>
+   
+   3. Set up DockerHub credentials
+   
+   <img width="700" alt="Screenshot 2023-07-10 at 22 15 29" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/f2cee7d0-5901-4257-a196-873e8a85e977">
+   <img width="700" alt="Screenshot 2023-07-10 at 22 14 54" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/6481f4b7-35df-43b8-a95e-0009c06b479d">
+   
+   <br>
+   <br>
+   
+   
+   ### 3. Restart services:
+   
+   ```sh
+   newgrp docker
+   sudo usermod -aG docker $USER
+   sudo usermod -aG docker jenkins
+   sudo service jenkins restart
+   sudo systemctl daemon-reload
+   sudo service docker restart
+   ```
+   
+   <br>
+   <br>
+
+  </details>
+  
+- Launch EKS Cluster
 
    **<details markdown=1><summary markdown="span">Install the AWS CLI version 2 on EC2</summary>**
   
@@ -208,49 +322,5 @@ Test stages involve the following test cases:
    https://stackoverflow.com/questions/75702017/my-kubernetes-deployment-keeps-failing-in-jenkins
 
 </details>
-   
-- Install **Jenkins**
-
-  **<details markdown=1><summary markdown="span">click for details</summary>**
-  
-   **RHEL:**
-  
-   ```
-   sudo yum install python3-pip python3-devel gcc
-   ```
-   ```
-   sudo pip3 install ansible
-   ```
-   ```
-   sudo yum install -y docker
-   ```
-   ```
-   sudo systemctl start docker
-   ```
-   ```
-   sudo usermod -aG docker $USER
-   ```
-   
-   **Ubuntu 22.04 :**
-
-   ```
-   sudo apt-get install ansible
-   ```
-   ```
-   ansible-galaxy collection install community.docker
-   ```
-   ```
-   sudo apt install python3-pip
-   ```
-   ```
-   sudo pip3 install docker
-   ```
-   ```
-   sudo usermod -aG docker $USER
-   ```
-
-  </details>
-
-- Install **Docker**
 
 <br>
