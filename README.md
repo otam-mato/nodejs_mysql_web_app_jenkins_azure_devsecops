@@ -118,7 +118,7 @@ Test stages involve the following test cases:
          
          - The fourth test case is named 'returned object contains the necessary properties: "id" (and it is the number)'. It sends an HTTP GET request to 'http://localhost:3000/entries', assumes the response contains an array of objects, and asserts that the first object in the array has the propertiy 'id'. It further asserts that the 'id' property is a number.
          
-         To test the MySQL database connection from within the NodeJS app we add one more endpoint `/entries' in index.js file:
+         To perform the end-to-end and test the MySQL database connection from within the NodeJS app we add one more endpoint `/entries' in index.js file:
          
          <img width="700" alt="Screenshot 2023-07-05 at 20 33 36" src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/assets/113034133/765e8c4d-574a-4843-aea1-e70fc2bacaad">
          
