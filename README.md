@@ -409,3 +409,15 @@ Test stages involve the following test cases:
 </details>
 
 <br>
+
+## Implementation
+
+Follow these steps for successful implementation:
+
+1. [**Modify the app files to allow Prometheus collecting metrics.**]()
+2. [**Create the configuration file for Prometheus"prometheus.yml".**]()
+4. [**Create the configuration file for Grafana "datasources.yml."**]()
+5. [**Create the Ansible playbook "ansible-deploy-containers.yml".**]()
+7. [**Run the Ansible playbook "ansible-deploy-containers.yml" file.**]()
+
+<br>
