@@ -15,9 +15,9 @@ Jenkins pipeline script entails several stages, each responsible for a specific 
 
 1. **Check out:** This stage checks out the source code from the specified Git repository.
 
-2. **Install dependencies:** This stage installs the Node.js dependencies required by the application using the npm install command.
+2. **Install dependencies:** This stage installs the Node.js dependencies required by the application using the ```npm install``` command.
 
-3. **Start the app:** This stage starts the Node.js application using the node index.js command. The ampersand (&) is used to run the command in the background.
+3. **Start the app:** This stage starts the Node.js application using the ```node index.js``` command. The ampersand (```&```) is used to run the command in the background.
 
 4. **Test stage for the app:** This stage runs the application's unit and end-to-end tests using the npm test command.
 
