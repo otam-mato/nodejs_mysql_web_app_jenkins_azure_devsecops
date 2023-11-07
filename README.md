@@ -19,7 +19,7 @@ Jenkins pipeline script entails several stages, each responsible for a specific 
 
 3. **Start the app:** This stage starts the Node.js application using the ```node index.js``` command. The ampersand (```&```) is used to run the command in the background.
 
-4. **Test stage for the app:** This stage runs the application's unit and end-to-end tests using the npm test command.
+4. **Test stage for the app:** This stage runs the application's unit and end-to-end tests using the `npm test` command.
 
 5. **Build Node.js image:** This stage builds a Docker image for the Node.js application. The docker.build command is used to build the image with a tag based on the Jenkins build number.
 
