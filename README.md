@@ -106,7 +106,7 @@ The app sets up a web server for a supplier management system. It allows viewing
 
 </details>
 
-**<details markdown=1><summary markdown="span">Unit and End-to-end testing</summary>**
+**<details markdown=1><summary markdown="span">Unit and End-to-end testing description</summary>**
 
 Test stages involve the following test cases:
 
