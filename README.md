@@ -42,7 +42,7 @@ Please note that the pipeline assumes the existence of a Jenkins credential with
 ## Flow Diagram
 
 <p align="center">
-  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/assets/113034133/345595d8-bee5-4f34-bf09-f19b0ee6ba78" width="800px"/>
+  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/assets/113034133/345595d8-bee5-4f34-bf09-f19b0ee6ba78" width="900px"/>
 </p>
 
 <br>
