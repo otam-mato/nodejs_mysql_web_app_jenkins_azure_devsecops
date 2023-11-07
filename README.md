@@ -440,5 +440,8 @@ Test stages involve the following test cases:
   <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/assets/113034133/9c082c9b-783b-49ce-9bd7-d1cb4ede6bdd" width="800px"/>
 </p>
 
+<p align="center">
+  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/assets/113034133/27793167-b539-4d48-bccc-2d090b7008a6" width="800px"/>
+</p>
 
 
