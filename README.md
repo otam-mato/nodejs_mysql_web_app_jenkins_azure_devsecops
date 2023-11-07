@@ -421,3 +421,5 @@ Test stages involve the following test cases:
 </p>
 
 <br>
+
+## Screenshots
