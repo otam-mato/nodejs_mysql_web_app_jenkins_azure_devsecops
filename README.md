@@ -1,4 +1,4 @@
-# Node.JS + MySQL Web App.<br><br>Building CICD pipeline with Jenkins to deploy on Kubernetes.
+# Node.JS + MySQL Web App.<br><br>Building CICD pipeline with Jenkins to deploy the app on Kubernetes.
 
 <br>
 
