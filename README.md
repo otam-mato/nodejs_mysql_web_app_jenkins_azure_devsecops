@@ -21,9 +21,9 @@ Jenkins pipeline script entails several stages, each responsible for a specific 
 
 4. **Test stage for the app:** This stage runs the application's unit and end-to-end tests using the `npm test` command.
 
-5. **Build Node.js image:** This stage builds a Docker image for the Node.js application. The docker.build command is used to build the image with a tag based on the Jenkins build number.
+5. **Build Node.js image:** This stage builds a Docker image for the Node.js application. The `docker.build` command is used to build the image with a tag based on the Jenkins build number.
 
-6. **Build MySQL image:** This stage builds a Docker image for MySQL. The MySQL image is built from a separate directory using the docker.build command, and the image tag includes the Jenkins build number.
+6. **Build MySQL image:** This stage builds a Docker image for MySQL. The MySQL image is built from a separate directory using the `docker.build` command, and the image tag includes the Jenkins build number.
 
 7. **Test stage for the container.** Unit tests - test Node.js image: This stage tests the Node.js Docker image by running the application's tests within a Docker container. The docker.image().run command is used to start the container, and the npx mocha command is used to execute the tests.
 
