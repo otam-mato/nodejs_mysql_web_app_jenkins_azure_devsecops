@@ -11,14 +11,32 @@
 
 ## Deployment Strategy
 
-1. **Building Stages with Docker:** <br> 
-   Here, we create Docker images of the Node.js application. This involves defining Dockerfiles, setting up the necessary configurations, and packaging the application into Docker containers. The build process ensures that the application is properly containerized and ready for deployment.
+The Jenkins pipeline script entails several stages, each responsible for a specific part of the deployment process:
 
-2. **Testing Stages covered by Mocha and Chai:** <br>
-   In this phase, we employ Mocha and Chai to conduct comprehensive testing. Mocha is used as the testing framework, while Chai provides the assertion library. The tests cover various aspects of the application, including unit tests, integration tests, and possibly end-to-end tests to ensure the app functions as expected.
+1. Check out: This stage checks out the source code from the specified Git repository.
 
-3. **Pushing built images to Docker Hub and deploying them to a Kubernetes Cluster launched on Amazon EKS:** <br>
-   Following successful testing, the built Docker images are pushed to Docker Hub for versioning and storage. Then, utilizing Jenkins, the images are deployed to a Kubernetes Cluster running on Amazon EKS. 
+2. Install dependencies: This stage installs the Node.js dependencies required by the application using the npm install command.
+
+3. Start the app: This stage starts the Node.js application using the node index.js command. The ampersand (&) is used to run the command in the background.
+
+4. Test stage for the app: This stage runs the application's unit and end-to-end tests using the npm test command.
+
+5. Build Node.js image: This stage builds a Docker image for the Node.js application. The docker.build command is used to build the image with a tag based on the Jenkins build number.
+
+6. Build MySQL image: This stage builds a Docker image for MySQL. The MySQL image is built from a separate directory using the docker.build command, and the image tag includes the Jenkins build number.
+
+7. Test stage for the container. Unit tests - test Node.js image: This stage tests the Node.js Docker image by running the application's tests within a Docker container. The docker.image().run command is used to start the container, and the npx mocha command is used to execute the tests.
+
+8. End-to-end test - test MySQL image: This stage tests the MySQL Docker image by running a separate test script within a Docker container. Similar to the previous stage, the MySQL container is started, and the npx mocha command is used to run the tests.
+
+9. Deploy images: This stage pushes the built Docker images to a Docker registry. The docker.withRegistry block is used to authenticate with the Docker registry, and the dockerImage.push command is used to push the Node.js image with tags for the build number and "latest". The same process is repeated for the MySQL image.
+
+10. Remove images: This stage removes the local Docker images that were built during the pipeline process using the ```docker rmi``` command.
+
+11. K8s Deploy: This stage deploys the application to a Kubernetes cluster. It configures the Kubernetes context using AWS CLI (aws eks update-kubeconfig) and applies the deployment configuration (```kubectl apply -f deployment.yaml```).
+
+Please note that the pipeline assumes the existence of a Jenkins credential with the ID 'kubern_config' that holds the necessary Kubernetes configuration.
+
 <br>
 
 ## Flow Diagram
