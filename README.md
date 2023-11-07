@@ -412,7 +412,9 @@ Test stages involve the following test cases:
 
 ## Implementation
 
-[**Configure and launch Jenkins declarative script.**]()
+**Configure and launch Jenkins declarative script.**
+
+[Jenkinsfile]()
 
 <p align="center">
   <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/assets/113034133/1131cbc1-768e-45de-9555-5533ec115eb2" width="800px"/>
