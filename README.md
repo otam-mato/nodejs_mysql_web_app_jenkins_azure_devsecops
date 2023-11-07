@@ -412,12 +412,10 @@ Test stages involve the following test cases:
 
 ## Implementation
 
-Follow these steps for successful implementation:
+[**Configure and launch Jenkins declarative script.**]()
 
-1. [**Modify the app files to allow Prometheus collecting metrics.**]()
-2. [**Create the configuration file for Prometheus"prometheus.yml".**]()
-4. [**Create the configuration file for Grafana "datasources.yml."**]()
-5. [**Create the Ansible playbook "ansible-deploy-containers.yml".**]()
-7. [**Run the Ansible playbook "ansible-deploy-containers.yml" file.**]()
+<p align="center">
+  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/assets/113034133/1131cbc1-768e-45de-9555-5533ec115eb2" width="800px"/>
+</p>
 
 <br>
