@@ -11,7 +11,7 @@
 
 ## Deployment Strategy
 
-The Jenkins pipeline script entails several stages, each responsible for a specific part of the deployment process:
+Jenkins pipeline script entails several stages, each responsible for a specific part of the deployment process:
 
 1. **Check out:** This stage checks out the source code from the specified Git repository.
 
