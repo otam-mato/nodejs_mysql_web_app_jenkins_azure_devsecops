@@ -9,7 +9,7 @@
 > In the current installment, I am building CICD pipeline with Jenkins to deploy the app on Kubernetes.
 <br>
 
-## Deployment Strategy
+## Deployment
 
 Jenkins pipeline script entails several stages, each responsible for a specific part of the deployment process:
 
