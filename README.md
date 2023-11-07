@@ -13,7 +13,7 @@
 
 The Jenkins pipeline script entails several stages, each responsible for a specific part of the deployment process:
 
-1. Check out: This stage checks out the source code from the specified Git repository.
+**1. Check out:** This stage checks out the source code from the specified Git repository.
 
 2. Install dependencies: This stage installs the Node.js dependencies required by the application using the npm install command.
 
