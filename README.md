@@ -2,7 +2,7 @@
 
 <br>
 
-> [!Note] The part of a series of demo projects in which I manipulate a Node.js application using various technologies.<br>
+> [ !NOTE ] The part of a series of demo projects in which I manipulate a Node.js application using various technologies.<br>
 >
 > The app built using Node.js and Express, originally presented at this [GitHub Repository](https://github.com/otam-mato/nodejs_mysql_web_app_terraform.git).
 >
