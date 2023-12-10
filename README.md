@@ -54,13 +54,13 @@ Please note that the success of this pipeline depends on the proper configuratio
 - **Jenkins**
 - **Node.JS**
 - **Express**
-- **Mocha**
-- **Chai**
-- **JavaScript**
+- **SonarQube**
+- **Trivy**
+- **OWASP dependency check**
 - **MySQL**
 - **Docker**
-- **AWS**
-- **EC2**
+- **MS Azure**
+- **VM**
   
 <br>
 
