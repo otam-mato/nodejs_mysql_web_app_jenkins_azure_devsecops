@@ -2,38 +2,56 @@ pipeline {
     agent any
     
     environment {
+        SCANNER_HOME=tool 'sonarqube-scanner'
         dockerregistry = 'https://registry.hub.docker.com'
         dockerhuburl = "montcarotte/jenkins_nodejs_app_demo"
         githuburl = "otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes"
         dockerhubcrd = 'dockerhub'
     }
- 
-    tools {nodejs "node"}
- 
+
     stages {
- 
-        stage('Check out') {
+        stage('Clean Workspace') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes.git']])
+                cleanWs()
             }
-        }    
-        stage('Install dependencies') {
+        }
+
+        stage('Checkout from Git') {
             steps {
-                sh 'npm install'
+                git branch: 'main', url: 'https://github.com/otam-mato/nodejs_mysql_web_app_jenkins.git'
             }
         }
         
-        stage('Start the app') {
+        stage('Install Dependencies') {
             steps {
-                sh 'node index.js &'
+                sh "npm install"
             }
         }
         
-        stage('Test the app') {
-            steps {
-                sh 'npm test'
+
+        stage("Sonarqube Analysis "){
+            steps{
+                withSonarQubeEnv('SonarQube-Server') {
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=COFFEE_APP \
+                    -Dsonar.projectKey=COFFEE_APP \
+                    -Dsonar.login='SonarQube-Token2' '''
+                }
             }
         }
+        
+        
+        stage('OWASP Dependency-Check Vulnerabilities') {
+            steps {
+                dependencyCheck additionalArguments: ''' 
+                            -o './'
+                            -s './'
+                            -f 'ALL' 
+                            --prettyPrint''', odcInstallation: 'DP'
+                
+                dependencyCheckPublisher pattern: 'dependency-check-report.xml'
+            }
+        }
+
         
         stage('Build NodeJS image') {
           steps{
@@ -45,7 +63,7 @@ pipeline {
         
         stage('Build MySQL image') {
           steps {
-            dir('/var/lib/jenkins/workspace/nodejs_app_pipeline/mysql_container') { 
+            dir('./mysql_container') { 
               script {
                 dockerImageMySQL = docker.build(dockerhuburl + ":${BUILD_NUMBER}_mysql")
               }
@@ -53,44 +71,20 @@ pipeline {
           }
         }
         
-        stage('Test NodeJS image') {
+        
+        stage('TRIVY FS SCAN') {
+            steps {
+                sh "trivy fs . > trivyfs.txt"
+            }
+        }
+        
+        stage("Quality Gate") {
             steps {
                 script {
-                    // Start the Docker container
-                    def container = docker.image("${dockerhuburl}:$BUILD_NUMBER").run("-d")
-                    try {
-                        // Wait for the container to start running
-                        sh 'sleep 10'
-                        
-                        // Run the test command outside the container
-                        sh "npx mocha test/unit-test.js"
-                    } finally {
-                        // Stop the container
-                        container.stop()
-                    }
+                    waitForQualityGate abortPipeline: false, credentialsId: 'SonarQube-Token2'
                 }
             }
         }
-        
-        stage('Test MySQL image') {
-          steps {
-            script {
-              // Start the MySQL Docker container
-              def mysqlContainer = docker.image("${dockerhuburl}:${BUILD_NUMBER}_mysql").run("-d")
-              try {
-                // Wait for the container to start running
-                sh 'sleep 10'
-        
-                // Run the test script outside the MySQL container
-                sh "npx mocha test/end-to-end-test.js"
-              } finally {
-                // Stop the MySQL container
-                mysqlContainer.stop()
-              }
-            }
-          }
-        }
-
         
         stage('Deploy images') {
           steps{
@@ -104,24 +98,17 @@ pipeline {
             }
           }
         }
- 
-        stage('Remove images') {
-          steps{
-            sh "docker rmi ${dockerhuburl}:${BUILD_NUMBER}"
-            sh "docker rmi ${dockerhuburl}:${BUILD_NUMBER}_mysql"
-          }
-        }
         
         stage('K8s Deploy') {
             steps{
-                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'kubern_config', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
-                    sh "aws eks update-kubeconfig --name demo-eks1"
-                    sh "kubectl apply -f /kubernetes_files/mysql_secret.yml"
-                    sh "kubectl apply -f /kubernetes_files/mysqldb_deployment.yml"
-                    sh "kubectl apply -f /kubernetes_files/nodejs_app_deployment.yml"
-                    sh "kubectl apply -f /kubernetes_files/services.yml"
+                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'Kube_config', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
+                    sh "kubectl apply -f ./kubernetes_files/mysql_secret.yml"
+                    sh "kubectl apply -f ./kubernetes_files/mysqldb_deployment.yml"
+                    sh "kubectl apply -f ./kubernetes_files/nodejs_app_deployment.yml"
+                    sh "kubectl apply -f ./kubernetes_files/services.yml"
                 }
             }
         }
+        
     }
 }
