@@ -131,19 +131,8 @@ Vulnerability scanning involves:
          
          These test cases verify various aspects of the API's response, including the status code, response format, array structure, non-empty response, and the presence and data types of specific properties in the response objects.
          
-         - The first test case is named 'should return all entries in the database as JSON'. It sends an HTTP GET request to 'http://localhost:3000/entries' and asserts that the response has a status code of 200 and is in JSON format.
-         
-         - The second test case is named 'should return the response is an array'. It sends an HTTP GET request to 'http://localhost:3000/entries' and asserts that the response body is an array.
-         
-         - The third test case is named 'ensure the response array is not empty'. It sends an HTTP GET request to 'http://localhost:3000/entries' and asserts that the response array has a length greater than 0.
-         
-         - The fourth test case is named 'returned object contains the necessary properties: "id" (and it is the number)'. It sends an HTTP GET request to 'http://localhost:3000/entries', assumes the response contains an array of objects, and asserts that the first object in the array has the propertiy 'id'. It further asserts that the 'id' property is a number.
-         
-         To perform the end-to-end and test the MySQL database connection from within the NodeJS app we add one more endpoint `/entries' in index.js file:
-         
-         <img width="700" alt="Screenshot 2023-07-05 at 20 33 36" src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/assets/113034133/765e8c4d-574a-4843-aea1-e70fc2bacaad">
 
-      3. **Scanning of images with Trivy**
+   3. **Scanning of images with Trivy**
 
          [**end-to-end-test.js**](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/blob/8cfbcb23d155ae9f6dc30ae170400d73dcd1ea0e/test/end-to-end-test.js)
 
