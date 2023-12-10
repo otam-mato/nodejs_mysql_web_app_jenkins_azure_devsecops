@@ -18,23 +18,23 @@ Jenkins pipeline script entails several stages, each responsible for a specific 
 
 2. **Checkout from Git:** Checks out the specified branch from the provided Git repository.
 
-   - **Install Dependencies:** Installs Node.js dependencies using the `npm install` command.
+3. **Install Dependencies:** Installs Node.js dependencies using the `npm install` command.
 
-   - **Sonarqube Analysis:** Runs SonarQube analysis using the SonarQube scanner. It includes setting project name, key, and login.
+4. **Sonarqube Analysis:** Runs SonarQube analysis using the SonarQube scanner. It includes setting project name, key, and login.
 
-   - **OWASP Dependency-Check Vulnerabilities:** Uses OWASP Dependency-Check to analyze dependencies and publishes the results.
+5. **OWASP Dependency-Check Vulnerabilities:** Uses OWASP Dependency-Check to analyze dependencies and publishes the results.
 
-   - **Build NodeJS image:** Builds a Docker image for the Node.js application.
+6. **Build NodeJS image:** Builds a Docker image for the Node.js application.
 
-   - **Build MySQL image:** Builds a Docker image for the MySQL container.
+7. **Build MySQL image:** Builds a Docker image for the MySQL container.
 
-   - **TRIVY SCAN:** Uses Trivy to perform images scan and outputs the results to `trivyfs.txt`.
+8. **TRIVY SCAN:** Uses Trivy to perform images scan and outputs the results to `trivyfs.txt`.
 
-   - **Quality Gate:** Waits for the SonarQube Quality Gate to pass.
+9. **Quality Gate:** Waits for the SonarQube Quality Gate to pass.
 
-   - **Deploy images:** Pushes the Node.js and MySQL Docker images to the specified Docker registry.
+10. **Deploy images:** Pushes the Node.js and MySQL Docker images to the specified Docker registry.
 
-   - **K8s Deploy:** Deploys Kubernetes resources using `kubectl apply` for MySQL secrets, deployments, Node.js app deployment, and services.
+11. **K8s Deploy:** Deploys Kubernetes resources using `kubectl apply` for MySQL secrets, deployments, Node.js app deployment, and services.
 
 Each stage represents a phase in the DevSecOps process, from scanning te code for vulnerabilities to deploying the application on Kubernetes. The pipeline leverages various tools such as SonarQube for static code analysis, OWASP Dependency-Check for vulnerability scanning, Docker for containerization, Trivy for images scanning, and Kubernetes for deployment.
 
