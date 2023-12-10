@@ -45,7 +45,7 @@ Please note that the success of this pipeline depends on the proper configuratio
 ## Flow Diagram
 
 <p align="center">
-  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/assets/113034133/345595d8-bee5-4f34-bf09-f19b0ee6ba78" width="1000px"/>
+  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/dc154489-6cd0-47bf-8637-1256afd69d03" width="1000px"/>
 </p>
 
 <br>
