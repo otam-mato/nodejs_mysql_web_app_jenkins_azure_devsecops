@@ -15,40 +15,31 @@
 Jenkins pipeline script entails several stages, each responsible for a specific part of the secutity checking and deployment processes:
 
 1. **Agent Configuration:** The pipeline is configured to run on any available agent (`agent any`), meaning it can run on any available executor.
-2. **Environment Variables:** Several environment variables are defined
-3. **Stages:**
-   - **Clean Workspace:**
-     - Cleans the workspace using the `cleanWs()` step.
+   
+3. **Environment Variables:** Several environment variables are defined
+   
+5. **Stages:**
+   - **Clean Workspace:** Cleans the workspace using the `cleanWs()` step.
 
-   - **Checkout from Git:**
-     - Checks out the specified branch from the provided Git repository.
+   - **Checkout from Git:** Checks out the specified branch from the provided Git repository.
 
-   - **Install Dependencies:**
-     - Installs Node.js dependencies using the `npm install` command.
+   - **Install Dependencies:** Installs Node.js dependencies using the `npm install` command.
 
-   - **Sonarqube Analysis:**
-     - Runs SonarQube analysis using the SonarQube scanner. It includes setting project name, key, and login.
+   - **Sonarqube Analysis:** Runs SonarQube analysis using the SonarQube scanner. It includes setting project name, key, and login.
 
-   - **OWASP Dependency-Check Vulnerabilities:**
-     - Uses OWASP Dependency-Check to analyze dependencies and publishes the results.
+   - **OWASP Dependency-Check Vulnerabilities:** Uses OWASP Dependency-Check to analyze dependencies and publishes the results.
 
-   - **Build NodeJS image:**
-     - Builds a Docker image for the Node.js application.
+   - **Build NodeJS image:** Builds a Docker image for the Node.js application.
 
-   - **Build MySQL image:**
-     - Builds a Docker image for the MySQL container.
+   - **Build MySQL image:** Builds a Docker image for the MySQL container.
 
-   - **TRIVY SCAN:**
-     - Uses Trivy to perform images scan and outputs the results to `trivyfs.txt`.
+   - **TRIVY SCAN:** Uses Trivy to perform images scan and outputs the results to `trivyfs.txt`.
 
-   - **Quality Gate:**
-     - Waits for the SonarQube Quality Gate to pass.
+   - **Quality Gate:** Waits for the SonarQube Quality Gate to pass.
 
-   - **Deploy images:**
-     - Pushes the Node.js and MySQL Docker images to the specified Docker registry.
+   - **Deploy images:** Pushes the Node.js and MySQL Docker images to the specified Docker registry.
 
-   - **K8s Deploy:**
-     - Deploys Kubernetes resources using `kubectl apply` for MySQL secrets, deployments, Node.js app deployment, and services.
+   - **K8s Deploy:** Deploys Kubernetes resources using `kubectl apply` for MySQL secrets, deployments, Node.js app deployment, and services.
 
 Each stage represents a phase in the DevSecOps process, from scanning te code for vulnerabilities to deploying the application on Kubernetes. The pipeline leverages various tools such as SonarQube for static code analysis, OWASP Dependency-Check for vulnerability scanning, Docker for containerization, Trivy for images scanning, and Kubernetes for deployment.
 
