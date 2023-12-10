@@ -14,14 +14,9 @@
 
 Jenkins pipeline script entails several stages, each responsible for a specific part of the secutity checking and deployment processes:
 
-1. **Agent Configuration:** The pipeline is configured to run on any available agent (`agent any`), meaning it can run on any available executor.
-   
-3. **Environment Variables:** Several environment variables are defined
-   
-5. **Stages:**
-   - **Clean Workspace:** Cleans the workspace using the `cleanWs()` step.
+1. **Clean Workspace:** Cleans the workspace using the `cleanWs()` step.
 
-   - **Checkout from Git:** Checks out the specified branch from the provided Git repository.
+2. **Checkout from Git:** Checks out the specified branch from the provided Git repository.
 
    - **Install Dependencies:** Installs Node.js dependencies using the `npm install` command.
 
