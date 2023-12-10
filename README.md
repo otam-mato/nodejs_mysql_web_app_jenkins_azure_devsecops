@@ -110,11 +110,19 @@ The app sets up a web server for a supplier management system. It allows viewing
 
 </details>
 
-**<details markdown=1><summary markdown="span">Unit and End-to-end testing description</summary>**
+**<details markdown=1><summary markdown="span">Vulnerability scanning and Dependency checks description</summary>**
 
-Test stages involve the following test cases:
+Vulnerability scanning involves:
 
-   1. **Unit testing example. Test the NodeJS app:**
+   1. **Scanning with SonarQube:**
+   <br><br>
+   [**unit_test.js**](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/blob/697c67da869b96e3061374cb682384946fc47430/test/unit-test.js)
+   
+      **Mocha** test script for testing the application running on port 3000. It uses the **Chai** assertion library and the Chai HTTP plugin for making HTTP requests and asserting the response.
+      <br><br>
+      This test case ensures that when an HTTP GET request is made to 'http://localhost:3000/', the response has a status code of 200 and there are no errors. If any of the assertions fail, the test case will be marked as failed.
+
+    2. **Scanning with Trivy:**
    <br><br>
    [**unit_test.js**](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/blob/697c67da869b96e3061374cb682384946fc47430/test/unit-test.js)
    
@@ -122,7 +130,7 @@ Test stages involve the following test cases:
       <br><br>
       This test case ensures that when an HTTP GET request is made to 'http://localhost:3000/', the response has a status code of 200 and there are no errors. If any of the assertions fail, the test case will be marked as failed.
    
-   2. **End-to-end test examples. Test MySQL database to send a request from within the NodeJS app**
+   3. **End-to-end test examples. Test MySQL database to send a request from within the NodeJS app**
 
          [**end-to-end-test.js**](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/blob/8cfbcb23d155ae9f6dc30ae170400d73dcd1ea0e/test/end-to-end-test.js)
 
