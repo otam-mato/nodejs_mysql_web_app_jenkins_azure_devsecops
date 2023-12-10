@@ -7,7 +7,7 @@
 >
 > The app built using Node.js and Express, originally presented at this [GitHub Repository](https://github.com/otam-mato/nodejs_mysql_web_app_terraform.git).
 >
-> In the current installment, I am building CICD pipeline with Jenkins to deploy the app on Kubernetes.
+> In the current installment, I am re-building the CICD pipeline to deploy the app on AKS Azure and add DevSecOps stages to scan the app for vulnerabilities.
 <br>
 
 ## Deployment
