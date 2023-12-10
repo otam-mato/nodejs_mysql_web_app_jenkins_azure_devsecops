@@ -12,7 +12,7 @@
 
 ## Deployment
 
-Jenkins pipeline script entails several stages, each responsible for a specific part of the secutity checking and deployment processes:
+Jenkins pipeline script entails several stages, each responsible for a specific part of the security checking and deployment processes:
 
 1. **Clean Workspace:** Cleans the workspace using the `cleanWs()` step.
 
