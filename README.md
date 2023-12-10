@@ -14,8 +14,7 @@
 
 Jenkins pipeline script entails several stages, each responsible for a specific part of the secutity checking and deployment processes:
 
-1. **Agent Configuration:**
-   - The pipeline is configured to run on any available agent (`agent any`), meaning it can run on any available executor.
+1. **Agent Configuration:** The pipeline is configured to run on any available agent (`agent any`), meaning it can run on any available executor.
    
 2. **Environment Variables:**
    - Several environment variables are defined, including:
