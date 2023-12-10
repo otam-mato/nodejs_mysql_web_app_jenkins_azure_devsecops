@@ -22,7 +22,7 @@ Jenkins pipeline script entails several stages, each responsible for a specific 
 
 3. **Install Dependencies:** Installs Node.js dependencies using the `npm install` command.
 
-4. **Sonarqube Analysis:** Runs SonarQube analysis using the SonarQube scanner. It includes setting project name, key, and login.
+4. **SonarQube Analysis:** Runs SonarQube analysis using the SonarQube scanner. It includes setting project name, key, and login.
 
 5. **OWASP Dependency-Check Vulnerabilities:** Uses OWASP Dependency-Check to analyze dependencies and publishes the results.
 
