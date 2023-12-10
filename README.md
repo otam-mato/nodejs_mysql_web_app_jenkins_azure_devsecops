@@ -149,7 +149,7 @@ Vulnerability scanning involves:
 
 ## Prerequisites
 
-- A work station or an **EC2** instance.
+- A work station or a **VM**.
   
 - Install and configure **Jenkins**
 
@@ -265,73 +265,12 @@ Vulnerability scanning involves:
 
   </details>
 
-- Install MySQL
+- Install and configure **SonarQube**
+- Install and configure **Trivy**
+- Install and configure **OWASP dependency check** 
+- Launch AKS Cluster
 
-  **<details markdown=1><summary markdown="span">Install MySQL to the Linux workstation</summary>**
-
-  Install MySQL:
-
-   ```sh
-   sudo apt-get install mysql-server
-   sudo systemctl start mysql
-   ```
-   
-   ```sh
-   mysql
-   ```
-   
-   ```sh
-   GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost';
-   ALTER USER 'root'@'localhost' IDENTIFIED BY '12345678';
-   ```
-   
-   <details markdown=1><summary markdown="span">Resolving 'access denied' issue </summary>
-   
-   The output of the `SELECT user, host, plugin FROM mysql.user WHERE user = 'root';` command shows that there are two 'root' user entries with different authentication plugins: 'caching_sha2_password' and 'auth_socket'.
-   
-   The 'caching_sha2_password' plugin is associated with the 'root' user when connecting from any host ('%'), while the 'auth_socket' plugin is associated with the 'root' user specifically when connecting from the 'localhost' host.
-   
-   The 'caching_sha2_password' plugin is the default authentication plugin introduced in MySQL 8.0, which uses SHA-256 hashing algorithm. On the other hand, the 'auth_socket' plugin uses the operating system's socket-based authentication mechanism.
-   
-   To resolve the access denied issue, you have a couple of options:
-   
-   1. Update the authentication method for the 'root' user with the 'localhost' host to use the password-based authentication plugin ('caching_sha2_password'). Run the following command to update the plugin:
-   
-      ```sql
-      ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'your_password';
-      ```
-   
-      Replace 'your_password' with the desired password for the 'root' user. This will set the password and update the authentication plugin.
-   
-   2. Connect to MySQL using the 'auth_socket' plugin. Since you have the 'auth_socket' plugin associated with the 'root' user for 'localhost', you can connect without providing a password using the following command:
-   
-      ```bash
-      mysql -h localhost -P 3306 -u root
-      ```
-   
-      This command will use the operating system's authentication to verify your credentials. Note that you must run the command from the same host where MySQL is installed.
-   
-   </details>
-   
-   ```sh
-   sudo mysql -h localhost -u root -p -e "CREATE DATABASE COFFEE;"
-   ```
-   ```
-   cd /var/lib/jenkins/workspace/nodejs_app_pipeline/mysql_container
-   ```
-   
-   ```sh
-   sudo mysql -h localhost -u root -p COFFEE < my_sql.sql
-   ```
-   
-   <br>
-   <br>
-
-</details>
-  
-- Launch EKS Cluster
-
-   **<details markdown=1><summary markdown="span">Install the AWS CLI version 2 on EC2</summary>**
+   **<details markdown=1><summary markdown="span">Install Azure CLI version 2 on the VM</summary>**
   
    Install the AWS CLI version 2 on EC2
 
