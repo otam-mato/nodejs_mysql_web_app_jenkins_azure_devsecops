@@ -1,3 +1,5 @@
+[under revision]
+
 # Node.JS + MySQL Web App.<br><br>Building DevSecOps pipeline with Jenkins to deploy the app on Kubernetes based on AKS.
 
 <br>
@@ -356,7 +358,7 @@ Vulnerability scanning involves:
 [Jenkinsfile](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/blob/238e878bd200063b3c59d6f92d9ff3a5079d0685/Jenkinsfile)
 
 <p align="center">
-  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/assets/113034133/1131cbc1-768e-45de-9555-5533ec115eb2" width="800px"/>
+  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/ce13052f-7c9f-4ac8-9a6a-f12fd3a96ec4" width="800px"/>
 </p>
 
 <br>
