@@ -1,4 +1,4 @@
-# Node.JS + MySQL Web App.<br><br>Building DevSecOps pipeline with Jenkins to deploy the app on Kubernetes.
+# Node.JS + MySQL Web App.<br><br>Building DevSecOps pipeline with Jenkins to deploy the app on Kubernetes based on AKS.
 
 <br>
 
