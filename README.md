@@ -383,3 +383,15 @@ Vulnerability scanning involves:
   <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/531a2e3e-2256-4b76-be1b-3c69ac92c147" width="800px"/>
 </p>
 
+<p align="center">
+  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/2d70d0d2-3118-490e-b92e-d87de55e8e65" width="800px"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/0165a622-109f-4434-81d8-af240b1f7e85" width="800px"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/a9487c58-6eaa-4389-bb6f-ce62fd608352" width="800px"/>
+</p>
+
