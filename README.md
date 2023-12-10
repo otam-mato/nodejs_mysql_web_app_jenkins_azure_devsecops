@@ -15,15 +15,7 @@
 Jenkins pipeline script entails several stages, each responsible for a specific part of the secutity checking and deployment processes:
 
 1. **Agent Configuration:** The pipeline is configured to run on any available agent (`agent any`), meaning it can run on any available executor.
-   
-2. **Environment Variables:**
-   - Several environment variables are defined, including:
-     - `SCANNER_HOME`: Set to the SonarQube scanner tool.
-     - `dockerregistry`: Docker registry URL.
-     - `dockerhuburl`: Docker Hub URL for the Jenkins Node.js app demo.
-     - `githuburl`: GitHub URL for the Jenkins pipeline source.
-     - `dockerhubcrd`: Docker Hub credentials ID.
-
+2. **Environment Variables:** Several environment variables are defined
 3. **Stages:**
    - **Clean Workspace:**
      - Cleans the workspace using the `cleanWs()` step.
