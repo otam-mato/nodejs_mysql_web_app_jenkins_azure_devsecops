@@ -132,7 +132,7 @@ Vulnerability scanning involves:
          These test cases verify various aspects of the API's response, including the status code, response format, array structure, non-empty response, and the presence and data types of specific properties in the response objects.
          
 
-   3. **Scanning of images with Trivy**
+   3. **OWASP Dependency check**
 
          [**end-to-end-test.js**](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/blob/8cfbcb23d155ae9f6dc30ae170400d73dcd1ea0e/test/end-to-end-test.js)
 
