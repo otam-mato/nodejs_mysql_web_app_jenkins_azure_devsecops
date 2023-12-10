@@ -67,7 +67,7 @@ Please note that the success of this pipeline depends on the proper configuratio
 
 ## Functionality
 
-This web application interfaces with a MySQL database, facilitating CRUD (Create, Read, Update, Delete) operations on the database records. Unit and End-to-end testing is implemented via **Mocha** and **Chai**. **Mocha** is used as the testing framework, while **Chai** provides the assertion library.
+This web application interfaces with a MySQL database, facilitating CRUD (Create, Read, Update, Delete) operations on the database records. DevSecOps practices implemented with OWASP dependency check, SonarQube and Trivy
 
 **<details markdown=1><summary markdown="span">Detailed app description</summary>**
 
