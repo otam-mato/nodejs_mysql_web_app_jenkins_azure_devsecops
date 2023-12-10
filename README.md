@@ -122,7 +122,9 @@ Vulnerability scanning involves:
       <br><br>
       This test case ensures that when an HTTP GET request is made to 'http://localhost:3000/', the response has a status code of 200 and there are no errors. If any of the assertions fail, the test case will be marked as failed.
 
+
     2. **Scanning with Trivy:**
+    
    <br><br>
    [**unit_test.js**](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/blob/697c67da869b96e3061374cb682384946fc47430/test/unit-test.js)
    
