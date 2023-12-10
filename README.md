@@ -114,7 +114,7 @@ The app sets up a web server for a supplier management system. It allows viewing
 
 Vulnerability scanning involves:
 
-   1. **Scanning with SonarQube:**
+   1. **Scanning of static code with SonarQube:**
    <br><br>
    [**unit_test.js**](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/blob/697c67da869b96e3061374cb682384946fc47430/test/unit-test.js)
    
@@ -122,17 +122,8 @@ Vulnerability scanning involves:
       <br><br>
       This test case ensures that when an HTTP GET request is made to 'http://localhost:3000/', the response has a status code of 200 and there are no errors. If any of the assertions fail, the test case will be marked as failed.
 
-
-    2. **Scanning with Trivy:**
-    
-   <br><br>
-   [**unit_test.js**](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/blob/697c67da869b96e3061374cb682384946fc47430/test/unit-test.js)
    
-      **Mocha** test script for testing the application running on port 3000. It uses the **Chai** assertion library and the Chai HTTP plugin for making HTTP requests and asserting the response.
-      <br><br>
-      This test case ensures that when an HTTP GET request is made to 'http://localhost:3000/', the response has a status code of 200 and there are no errors. If any of the assertions fail, the test case will be marked as failed.
-   
-   3. **End-to-end test examples. Test MySQL database to send a request from within the NodeJS app**
+   2. **Scanning of images with Trivy**
 
          [**end-to-end-test.js**](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/blob/8cfbcb23d155ae9f6dc30ae170400d73dcd1ea0e/test/end-to-end-test.js)
 
@@ -151,6 +142,12 @@ Vulnerability scanning involves:
          To perform the end-to-end and test the MySQL database connection from within the NodeJS app we add one more endpoint `/entries' in index.js file:
          
          <img width="700" alt="Screenshot 2023-07-05 at 20 33 36" src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/assets/113034133/765e8c4d-574a-4843-aea1-e70fc2bacaad">
+
+      3. **Scanning of images with Trivy**
+
+         [**end-to-end-test.js**](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/blob/8cfbcb23d155ae9f6dc30ae170400d73dcd1ea0e/test/end-to-end-test.js)
+
+         **Mocha** test cases for testing an API just returns some entries from a database (id). The tests as well use **Chai** assertions and the Chai HTTP plugin for making HTTP requests and asserting the response.
          
    
    <br>
