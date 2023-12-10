@@ -60,6 +60,7 @@ Please note that the success of this pipeline depends on the proper configuratio
 - **MySQL**
 - **Docker**
 - **MS Azure**
+- **MS AKS**
 - **VM**
   
 <br>
