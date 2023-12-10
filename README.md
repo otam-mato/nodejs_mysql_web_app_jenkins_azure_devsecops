@@ -28,7 +28,7 @@ Jenkins pipeline script entails several stages, each responsible for a specific 
 
 7. **Test stage for the container.** Unit tests - test Node.js image: This stage tests the Node.js Docker image by running the application's tests within a Docker container. The `docker.image().run` command is used to start the container, and the `npx mocha` command is used to execute the tests.
 
-8. **End-to-end test - test MySQL to senr the request from the app:** This stage tests the MySQL Docker image by running a separate test script within a Docker container. Similar to the previous stage, the MySQL container is started, and the `npx mocha` command is used to run the tests.
+8. **End-to-end test - test MySQL to send the request from the app:** This stage tests the MySQL Docker image by running a separate test script within a Docker container. Similar to the previous stage, the MySQL container is started, and the `npx mocha` command is used to run the tests.
 
 9. **Deploy images:** This stage pushes the built Docker images to a Docker registry. The `docker.withRegistry` block is used to authenticate with the Docker registry, and the `dockerImage.push` command is used to push the Node.js image with tags for the build number and "latest". The same process is repeated for the MySQL image.
 
