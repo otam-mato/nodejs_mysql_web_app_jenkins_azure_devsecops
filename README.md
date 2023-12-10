@@ -12,31 +12,56 @@
 
 ## Deployment
 
-Jenkins pipeline script entails several stages, each responsible for a specific part of the deployment process:
+Jenkins pipeline script entails several stages, each responsible for a specific part of the secutity checking and deployment processes:
 
-1. **Check out:** This stage checks out the source code from the specified Git repository.
+1. **Agent Configuration:**
+   - The pipeline is configured to run on any available agent (`agent any`), meaning it can run on any available executor.
+   
+2. **Environment Variables:**
+   - Several environment variables are defined, including:
+     - `SCANNER_HOME`: Set to the SonarQube scanner tool.
+     - `dockerregistry`: Docker registry URL.
+     - `dockerhuburl`: Docker Hub URL for the Jenkins Node.js app demo.
+     - `githuburl`: GitHub URL for the Jenkins pipeline source.
+     - `dockerhubcrd`: Docker Hub credentials ID.
 
-2. **Install dependencies:** This stage installs the Node.js dependencies required by the application using the ```npm install``` command.
+3. **Stages:**
+   - **Clean Workspace:**
+     - Cleans the workspace using the `cleanWs()` step.
 
-3. **Start the app:** This stage starts the Node.js application using the ```node index.js``` command. The ampersand (```&```) is used to run the command in the background.
+   - **Checkout from Git:**
+     - Checks out the specified branch from the provided Git repository.
 
-4. **Test stage for the app:** This stage runs the application's unit and end-to-end tests using the `npm test` command.
+   - **Install Dependencies:**
+     - Installs Node.js dependencies using the `npm install` command.
 
-5. **Build Node.js image:** This stage builds a Docker image for the Node.js application. The `docker.build` command is used to build the image with a tag based on the Jenkins build number.
+   - **Sonarqube Analysis:**
+     - Runs SonarQube analysis using the SonarQube scanner. It includes setting project name, key, and login.
 
-6. **Build MySQL image:** This stage builds a Docker image for MySQL. The MySQL image is built from a separate directory using the `docker.build` command, and the image tag includes the Jenkins build number.
+   - **OWASP Dependency-Check Vulnerabilities:**
+     - Uses OWASP Dependency-Check to analyze dependencies and publishes the results.
 
-7. **Test stage for the container.** Unit tests - test Node.js image: This stage tests the Node.js Docker image by running the application's tests within a Docker container. The `docker.image().run` command is used to start the container, and the `npx mocha` command is used to execute the tests.
+   - **Build NodeJS image:**
+     - Builds a Docker image for the Node.js application.
 
-8. **End-to-end test - test MySQL to send the request from the app:** This stage tests the MySQL Docker image by running a separate test script within a Docker container. Similar to the previous stage, the MySQL container is started, and the `npx mocha` command is used to run the tests.
+   - **Build MySQL image:**
+     - Builds a Docker image for the MySQL container.
 
-9. **Deploy images:** This stage pushes the built Docker images to a Docker registry. The `docker.withRegistry` block is used to authenticate with the Docker registry, and the `dockerImage.push` command is used to push the Node.js image with tags for the build number and "latest". The same process is repeated for the MySQL image.
+   - **TRIVY SCAN:**
+     - Uses Trivy to perform images scan and outputs the results to `trivyfs.txt`.
 
-10. **Remove images:** This stage removes the local Docker images that were built during the pipeline process using the ```docker rmi``` command.
+   - **Quality Gate:**
+     - Waits for the SonarQube Quality Gate to pass.
 
-11. **K8s Deploy:** This stage deploys the application to a Kubernetes cluster. It configures the Kubernetes context using AWS CLI (aws eks update-kubeconfig) and applies the deployment configuration (```kubectl apply -f deployment.yaml```).
+   - **Deploy images:**
+     - Pushes the Node.js and MySQL Docker images to the specified Docker registry.
 
-Please note that the pipeline assumes the existence of a Jenkins credential with the ID 'kubern_config' that holds the necessary Kubernetes configuration.
+   - **K8s Deploy:**
+     - Deploys Kubernetes resources using `kubectl apply` for MySQL secrets, deployments, Node.js app deployment, and services.
+
+Each stage represents a phase in the DevSecOps process, from scanning te code for vulnerabilities to deploying the application on Kubernetes. The pipeline leverages various tools such as SonarQube for static code analysis, OWASP Dependency-Check for vulnerability scanning, Docker for containerization, Trivy for images scanning, and Kubernetes for deployment.
+
+Please note that the success of this pipeline depends on the proper configuration of Jenkins, the availability of required tools, and the correctness of the associated files (e.g., Kubernetes YAML files, Jenkins credentials storage).
 
 <br>
 
