@@ -372,11 +372,11 @@ Vulnerability scanning involves:
 </p>
 
 <p align="center">
-  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/assets/113034133/3f7be45c-da1c-41f4-b46b-091bf81116da" width="800px"/>
+  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/715c8f01-ee56-43fe-a774-fa3f75e92acf" width="800px"/>
 </p>
 
 <p align="center">
-  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/assets/113034133/9c082c9b-783b-49ce-9bd7-d1cb4ede6bdd" width="800px"/>
+  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/3434f91f-0cbe-4c50-a356-671d19964251" width="800px"/>
 </p>
 
 <p align="center">
