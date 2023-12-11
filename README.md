@@ -156,7 +156,7 @@ Vulnerability scanning involves:
       By using SonarQube, development teams can proactively address code quality issues, reduce technical debt, and improve the overall reliability and maintainability of their software projects. It plays a crucial role in fostering a culture of continuous improvement in software development practices.
 
    
-   2. **Scanning of images with Trivy**
+## 2. **Scanning of images with Trivy**
 
       Trivy is an open-source vulnerability scanner specifically designed for containers and containerized applications. It focuses on providing security scanning for container images and is commonly used in containerized environments such as Docker and Kubernetes. Trivy helps identify vulnerabilities in the software packages and dependencies included in container images, allowing developers and operators to address security issues early in the development and deployment process.
       
