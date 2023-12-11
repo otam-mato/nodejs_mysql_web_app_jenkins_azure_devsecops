@@ -190,41 +190,11 @@ Vulnerability scanning involves:
 
   </details>
 
-- Install **Docker**
+- Restart services
 
-  **<details markdown=1><summary markdown="span">Install Docker to the Linux workstation</summary>**
-
-  1. Install Docker to the Linux workstation
-
-   ```sh
-   sudo apt-get update
-   sudo apt install gnupg2 pass -y
-   sudo apt install docker.io -y
-   sudo systemctl start docker
-   sudo systemctl enable docker
-   sudo systemctl status docker
-   ```
-   <br>
-   <br>
-   
-   2. Install Docker plugins to Jenkins
-   
-   
-   <img width="700" alt="Screenshot 2023-07-10 at 21 16 16 1" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/09837d61-60f1-4d57-981f-f2ababedf9d4">
-   <img width="700" alt="Screenshot 2023-07-10 at 21 17 25" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/e29bd21b-4bca-46e0-8342-071167f52ba5">
-   <br>
-   <br>
-   
-   3. Set up DockerHub credentials
-   
-   <img width="700" alt="Screenshot 2023-07-10 at 22 15 29" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/f2cee7d0-5901-4257-a196-873e8a85e977">
-   <img width="700" alt="Screenshot 2023-07-10 at 22 14 54" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/6481f4b7-35df-43b8-a95e-0009c06b479d">
-   
-   <br>
-   <br>
-   
-   
-   ### 3. Restart services:
+  **<details markdown=1><summary markdown="span">Restart services</summary>**
+  
+   **Restart services**:
    
    ```sh
    newgrp docker
@@ -240,9 +210,6 @@ Vulnerability scanning involves:
 
   </details>
 
-- Install and configure **SonarQube**
-- Install and configure **Trivy**
-- Install and configure **OWASP dependency check** 
 - Launch AKS Cluster
 
    **<details markdown=1><summary markdown="span">Install Azure CLI version 2 on the VM</summary>**
