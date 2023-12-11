@@ -117,6 +117,7 @@ The app sets up a web server for a supplier management system. It allows viewing
 Vulnerability scanning involves:
 
    1. **Scanning of static code with SonarQube:**
+      
    <br><br>
    
    SonarQube is an open-source platform designed to continuously inspect and analyze code quality in software projects. It is widely used in the software development industry to identify and manage code quality issues throughout the development lifecycle. SonarQube provides a range of features and tools to assess the health of codebases and to help teams improve the maintainability, reliability, and security of their software.
