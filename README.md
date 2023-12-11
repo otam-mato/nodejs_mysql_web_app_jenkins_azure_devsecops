@@ -190,17 +190,27 @@ Vulnerability scanning involves:
 
   </details>
 
-  **<details markdown=1><summary markdown="span">Install Jenkins, SonarQube and Trivy</summary>**
+  **<details markdown=1><summary markdown="span">Configure Jenkins plugins</summary>**
 
   ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/74bf7384-0b49-49b0-8dde-a2345fe3256a)
   ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/781d1a0d-9078-48ee-b14a-9d8e3e1cfb27)
   ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/00ec917e-672e-403b-b131-c814e03d5a64)
   ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/3122513a-1bfe-4d4e-8d77-f09004599242)
+  </details>
 
+  **<details markdown=1><summary markdown="span">Configure SonarQube</summary>**
 
-
-
-
+  ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/619419d6-92a8-48e4-955d-61f572167d4e)
+  ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/fcf6b305-9520-4536-a3c9-61b2d2055b5b)
+  ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/6b012562-b776-475c-8a0a-7bc874265628)
+  ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/daed306f-2a03-4825-92a5-bcc9b4f4dba5)
+  ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/1ae6114c-1fcd-4f8b-821a-447ccbb8b93c)
+  ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/f65b2b5b-ab12-4ce8-9da6-ae037ad2edbb)
+  ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/e12878a6-bbbd-4dd1-bc0f-55f901b87561)
+  ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/02b41c4b-eb00-49e4-84a3-a8a8926c0ad5)
+  ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/ea1eeac0-dc23-491b-89aa-50d845cddc08)
+  ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/fd20d492-0b67-46c4-a6e1-32092955bd59)
+  
   </details>
 
 - Restart services
