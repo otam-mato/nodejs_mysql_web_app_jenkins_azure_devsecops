@@ -158,11 +158,38 @@ Vulnerability scanning involves:
    
    2. **Scanning of images with Trivy**
 
-         [**end-to-end-test.js**](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/blob/8cfbcb23d155ae9f6dc30ae170400d73dcd1ea0e/test/end-to-end-test.js)
-
-         **Mocha** test cases for testing an API just returns some entries from a database (id). The tests as well use **Chai** assertions and the Chai HTTP plugin for making HTTP requests and asserting the response.
-         
-         These test cases verify various aspects of the API's response, including the status code, response format, array structure, non-empty response, and the presence and data types of specific properties in the response objects.
+      Trivy is an open-source vulnerability scanner specifically designed for containers and containerized applications. It focuses on providing security scanning for container images and is commonly used in containerized environments such as Docker and Kubernetes. Trivy helps identify vulnerabilities in the software packages and dependencies included in container images, allowing developers and operators to address security issues early in the development and deployment process.
+      
+      Key features and uses of Trivy include:
+      
+      - **Container Image Scanning:**
+         - Trivy scans container images for vulnerabilities by analyzing the software packages and libraries included in the image layers.
+         - It checks against known vulnerabilities in public vulnerability databases to identify potential security issues.
+      
+      - **Fast and Lightweight:**
+         - Trivy is designed to be fast and lightweight, making it suitable for integration into CI/CD pipelines and other automated workflows.
+         - Its quick scanning capabilities allow for efficient security checks during the development and deployment lifecycle.
+      
+      - **Multiple Language Support:**
+         - Trivy supports scanning images for vulnerabilities in various programming languages, including Java, Python, Ruby, JavaScript, Go, and others.
+         - This flexibility makes it applicable to a wide range of containerized applications.
+      
+      - **Offline Mode:**
+         - Trivy supports an offline mode, allowing users to cache vulnerability databases locally.
+         - This is useful in environments with restricted internet access or for scenarios where users want to scan container images without an active internet connection.
+      
+      - **Integration with CI/CD Pipelines:**
+         - Trivy can be integrated into CI/CD pipelines to automate security scans as part of the continuous integration and deployment process.
+         - Automated scanning helps ensure that container images being deployed to production are free from known vulnerabilities.
+      
+      - **JSON Output and Formats:**
+         - Trivy provides results in JSON format, making it easy to integrate with other tools and systems.
+         - This output can be parsed and used for reporting, logging, or integration with security information and event management (SIEM) systems.
+      
+      - **Advisory Database Support:**
+         - Trivy uses vulnerability databases such as the National Vulnerability Database (NVD) and the Red Hat Security Data API to identify known vulnerabilities.
+      
+      In summary, Trivy is a container image vulnerability scanner that aids in securing containerized applications by identifying and reporting on known vulnerabilities in the software packages and dependencies used within container images. Its focus on speed, flexibility, and integration capabilities makes it a valuable tool for DevSecOps practices, helping organizations maintain a strong security posture in their containerized environments.
          
 
    3. **OWASP Dependency check**
