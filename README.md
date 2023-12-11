@@ -242,11 +242,16 @@ Vulnerability scanning involves:
 
 - Launch Azure AKS Cluster
 
-**<details markdown=1><summary markdown="span">Install Azure CLI on the VM</summary>**
-  
-   
+  **<details markdown=1><summary markdown="span">Install and configure Azure CLI on the VM</summary>**
 
-</details>
+  ```
+  sudo apt install azure-cli
+  az login
+  az account set --subscription <your_id>
+  az aks get-credentials --resource-group DefaultResourceGroup --name tester3
+  cat /home/azureuser/.kube/config
+  ```  
+  </details>
 
 <br>
 
