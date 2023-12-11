@@ -213,6 +213,15 @@ Vulnerability scanning involves:
   
   </details>
 
+  **<details markdown=1><summary markdown="span">OWASP</summary>**
+
+  ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/fac723ed-d67d-45a8-a815-4142916cae62)
+  ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/ff0d6487-cef3-43c4-bae6-123be8cd5067)
+
+
+
+  </details>
+
 - Restart services
 
   **<details markdown=1><summary markdown="span">Restart services</summary>**
