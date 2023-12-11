@@ -155,10 +155,9 @@ Vulnerability scanning involves:
       
       By using SonarQube, development teams can proactively address code quality issues, reduce technical debt, and improve the overall reliability and maintainability of their software projects. It plays a crucial role in fostering a culture of continuous improvement in software development practices.
 
-   
-## 2. **Scanning of images with Trivy**
+  2. **Scanning of images with Trivy**
 
-      Trivy is an open-source vulnerability scanner specifically designed for containers and containerized applications. It focuses on providing security scanning for container images and is commonly used in containerized environments such as Docker and Kubernetes. Trivy helps identify vulnerabilities in the software packages and dependencies included in container images, allowing developers and operators to address security issues early in the development and deployment process.
+     Trivy is an open-source vulnerability scanner specifically designed for containers and containerized applications. It focuses on providing security scanning for container images and is commonly used in containerized environments such as Docker and Kubernetes. Trivy helps identify vulnerabilities in the software packages and dependencies included in container images, allowing developers and operators to address security issues early in the development and deployment process.
       
       Key features and uses of Trivy include:
       
@@ -191,10 +190,9 @@ Vulnerability scanning involves:
       
       In summary, Trivy is a container image vulnerability scanner that aids in securing containerized applications by identifying and reporting on known vulnerabilities in the software packages and dependencies used within container images. Its focus on speed, flexibility, and integration capabilities makes it a valuable tool for DevSecOps practices, helping organizations maintain a strong security posture in their containerized environments.
          
+  3. **OWASP Dependency check**
 
-   3. **OWASP Dependency check**
-
-      OWASP Dependency-Check is an open-source security tool that specializes in identifying and alerting on project dependencies with known vulnerabilities. It is developed by the Open Web Application Security Project (OWASP) and is designed to be integrated into the software development life cycle to enhance application security.
+     OWASP Dependency-Check is an open-source security tool that specializes in identifying and alerting on project dependencies with known vulnerabilities. It is developed by the Open Web Application Security Project (OWASP) and is designed to be integrated into the software development life cycle to enhance application security.
       
       Key features and uses of OWASP Dependency-Check include:
       
