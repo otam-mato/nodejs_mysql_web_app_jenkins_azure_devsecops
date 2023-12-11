@@ -194,13 +194,42 @@ Vulnerability scanning involves:
 
    3. **OWASP Dependency check**
 
-         [**end-to-end-test.js**](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins/blob/8cfbcb23d155ae9f6dc30ae170400d73dcd1ea0e/test/end-to-end-test.js)
-
-         **Mocha** test cases for testing an API just returns some entries from a database (id). The tests as well use **Chai** assertions and the Chai HTTP plugin for making HTTP requests and asserting the response.
-         
-   
-   <br>
-   <br>
+      OWASP Dependency-Check is an open-source security tool that specializes in identifying and alerting on project dependencies with known vulnerabilities. It is developed by the Open Web Application Security Project (OWASP) and is designed to be integrated into the software development life cycle to enhance application security.
+      
+      Key features and uses of OWASP Dependency-Check include:
+      
+      - **Dependency Analysis:**
+         - Dependency-Check focuses on analyzing and identifying vulnerabilities in project dependencies, including libraries and third-party components.
+         - It scans dependencies for known vulnerabilities by checking against various vulnerability databases.
+      
+      - **Wide Language Support:**
+         - OWASP Dependency-Check supports a wide range of programming languages, making it versatile and applicable to projects developed in different languages.
+         - Commonly supported languages include Java, JavaScript, .NET, Python, Ruby, PHP, and more.
+      
+      - **Integration with Build Tools:**
+         - Dependency-Check is designed to be integrated into the build process and various build tools such as Apache Maven, Gradle, npm, and others.
+         - It can be configured to run automatically as part of the build or CI/CD pipeline.
+      
+      - **Vulnerability Databases:**
+         - Dependency-Check uses multiple vulnerability databases, including the National Vulnerability Database (NVD), to identify known vulnerabilities.
+         - It provides information about the severity of vulnerabilities, affected versions, and references to additional resources.
+      
+      - **Build Failures and Reporting:**
+         - When vulnerabilities are detected, Dependency-Check can be configured to fail the build or generate reports.
+         - This ensures that developers are promptly notified of security issues and can take appropriate actions to remediate them.
+      
+      - **Integration with CI/CD Pipelines:**
+         - Dependency-Check integrates well with CI/CD pipelines, enabling automated security scanning as part of the continuous integration and deployment process.
+         - Automated scanning helps identify and address vulnerabilities early in the development lifecycle.
+      
+      - **Command-Line Interface and APIs:**
+         - Dependency-Check provides a command-line interface (CLI) for manual execution and configuration.
+         - It also offers APIs that allow for integration with other tools and systems.
+      
+      - **Suppression Mechanisms:**
+         - Dependency-Check supports mechanisms to suppress false positives and known issues, allowing for more flexible use in complex projects.
+      
+      By using OWASP Dependency-Check, development teams can proactively identify and address security vulnerabilities in their projects' dependencies. This helps mitigate the risk of including components with known security flaws and contributes to overall application security by promoting the use of up-to-date and secure dependencies. The tool is part of the broader movement toward integrating security practices into the software development life cycle, often referred to as DevSecOps.
 
 </details>
 
