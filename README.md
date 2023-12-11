@@ -198,6 +198,17 @@ Vulnerability scanning involves:
   ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/3122513a-1bfe-4d4e-8d77-f09004599242)
   </details>
 
+  **<details markdown=1><summary markdown="span">Configure Docker</summary>**
+
+  ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/8cfd85ba-28ac-4c60-92ab-db5c6f6a5b31)
+  ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/0b21b287-ace8-4f32-9e56-c9f76bb768a8)
+  ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/74ef4b5e-3d0b-494f-91ab-39c8d4d37070)
+
+
+
+
+  </details>
+
   **<details markdown=1><summary markdown="span">Configure SonarQube</summary>**
 
   ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/619419d6-92a8-48e4-955d-61f572167d4e)
@@ -213,7 +224,7 @@ Vulnerability scanning involves:
   
   </details>
 
-  **<details markdown=1><summary markdown="span">OWASP</summary>**
+  **<details markdown=1><summary markdown="span">Configure OWASP</summary>**
 
   ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/fac723ed-d67d-45a8-a815-4142916cae62)
   ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/ff0d6487-cef3-43c4-bae6-123be8cd5067)
