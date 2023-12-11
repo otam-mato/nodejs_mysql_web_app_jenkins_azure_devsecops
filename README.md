@@ -188,6 +188,15 @@ Vulnerability scanning involves:
     sudo apt-get install trivy -y
     ```
 
+    ```sh
+    newgrp docker
+    sudo usermod -aG docker $USER
+    sudo usermod -aG docker jenkins
+    sudo service jenkins restart
+    sudo systemctl daemon-reload
+    sudo service docker restart
+    ```
+
   </details>
 
   **<details markdown=1><summary markdown="span">Configure Jenkins plugins</summary>**
@@ -228,107 +237,14 @@ Vulnerability scanning involves:
 
   ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/fac723ed-d67d-45a8-a815-4142916cae62)
   ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/ff0d6487-cef3-43c4-bae6-123be8cd5067)
-
-
-
   </details>
 
-- Restart services
 
-  **<details markdown=1><summary markdown="span">Restart services</summary>**
+- Launch Azure AKS Cluster
+
+**<details markdown=1><summary markdown="span">Install Azure CLI on the VM</summary>**
   
-   **Restart services**:
    
-   ```sh
-   newgrp docker
-   sudo usermod -aG docker $USER
-   sudo usermod -aG docker jenkins
-   sudo service jenkins restart
-   sudo systemctl daemon-reload
-   sudo service docker restart
-   ```
-   
-   <br>
-   <br>
-
-  </details>
-
-- Launch AKS Cluster
-
-   **<details markdown=1><summary markdown="span">Install Azure CLI version 2 on the VM</summary>**
-  
-   Install the AWS CLI version 2 on EC2
-
-   ```
-   curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" 
-   
-   sudo apt install unzip
-   
-   sudo unzip awscliv2.zip  
-   
-   sudo ./aws/install
-   
-   aws --version
-   ```
-   
-   Configure aws cli using your Access key and Secret access key
-   
-   ```
-   aws configure
-   ```
-   
-   Install eksctl on EC2 Instance
-   
-   ```
-   curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-   
-   sudo mv /tmp/eksctl /usr/local/bin
-   
-   eksctl version
-   ```
-   
-   Install kubectl on EC2 Instance
-   
-   ```
-   sudo curl --silent --location -o /usr/local/bin/kubectl   https://s3.us-west-2.amazonaws.com/amazon-eks/1.22.6/2022-03-09/bin/linux/amd64/kubectl
-   
-   sudo chmod +x /usr/local/bin/kubectl 
-   
-   kubectl version --short --client
-   ```
-   For the smooth testing create IAM Role with Administrator Access. Later the privileges must be limited according to the "least privilege" principle.
-   
-   <br>
-   <img width="700" alt="Screenshot 2023-03-22 at 08 30 45" src="https://user-images.githubusercontent.com/104728608/226843952-8aa6336f-4dfa-4d1b-9f00-caa9fac1e53d.png">
-   
-   <img width="700" alt="Screenshot 2023-03-22 at 08 40 16" src="https://user-images.githubusercontent.com/104728608/226847236-76b88323-f6f2-45b0-b360-bab57292de6c.png">
-   
-   
-   <br>
-   
-   ```
-   sudo su - jenkins
-   ```
-   ```
-   eksctl create cluster --name demo-eks --region us-east-1 --nodegroup-name my-nodes --node-type t3.small --managed --nodes 2 
-   
-   eksctl get cluster --name demo-eks --region us-east-1
-   
-   aws eks update-kubeconfig --name demo-eks --region us-east-1
-   
-   cat  /var/lib/jenkins/.kube/config
-   ```
-   <img width="700" alt="Screenshot 2023-03-21 at 14 57 03" src="https://user-images.githubusercontent.com/104728608/226848177-38710c6a-3b2d-460b-9331-a718d0ef07db.png">
-   
-   save /var/lib/jenkins/.kube/config content at your local machine in kubeconfig_mar2023.txt file and upload it as global credentials to  Jenkins
-   
-   <img width="700" alt="Screenshot 2023-03-21 at 14 57 52" src="https://user-images.githubusercontent.com/104728608/226848957-044c701a-8bf6-4b51-be46-49411fb4d0e5.png">
-   
-   <img width="700" alt="Screenshot 2023-03-22 at 08 51 00" src="https://user-images.githubusercontent.com/104728608/226849926-e84e642c-3245-4c90-a363-d7eff1243920.png">
-   
-   Troubleshoot: 
-   
-   https://stackoverflow.com/questions/75702017/my-kubernetes-deployment-keeps-failing-in-jenkins
 
 </details>
 
