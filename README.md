@@ -117,45 +117,43 @@ The app sets up a web server for a supplier management system. It allows viewing
 Vulnerability scanning involves:
 
    1. **Scanning of static code with SonarQube:**
-      
-   <br><br>
    
-SonarQube is an open-source platform designed to continuously inspect and analyze code quality in software projects. It is widely used in the software development industry to identify and manage code quality issues throughout the development lifecycle. SonarQube provides a range of features and tools to assess the health of codebases and to help teams improve the maintainability, reliability, and security of their software.
-
-Key features and uses of SonarQube include:
-
-- **Static Code Analysis:**
-   - SonarQube performs static code analysis by scanning the source code without executing it.
-   - It identifies and reports on various code quality issues, such as code smells, bugs, security vulnerabilities, and potential maintainability problems.
-
-- **Code Quality Metrics:**
-   - SonarQube measures and reports on a variety of code quality metrics, including code duplication, code complexity, and test coverage.
-   - These metrics provide insights into the overall health and maintainability of the codebase.
-
-- **Security Vulnerability Detection:**
-   - SonarQube includes security analyzers that can detect common security vulnerabilities in the code.
-   - It helps developers identify and address security issues early in the development process.
-
-- **Integration with CI/CD Pipelines:**
-   - SonarQube integrates seamlessly with continuous integration and continuous deployment (CI/CD) pipelines.
-   - Developers can configure the pipeline to trigger SonarQube analyses automatically, providing immediate feedback on code changes.
-
-- **Quality Gates:**
-   - Quality Gates in SonarQube allow teams to set and enforce specific criteria for code quality.
-   - The pipeline can be configured to pass or fail based on whether the code meets predefined quality standards.
-
-- **Historical Analysis:**
-   - SonarQube keeps track of historical code quality data, allowing teams to monitor trends over time.
-   - This feature helps teams identify areas of improvement and track the impact of code changes on overall code quality.
-
-- **Language Support:**
-   - SonarQube supports a wide range of programming languages, including Java, JavaScript, C#, Python, Ruby, and more.
-   - This makes it versatile and applicable to projects developed in various languages.
-
-- **Custom Rules and Extensions:**
-   - Teams can define custom coding rules and extend SonarQube's capabilities to meet specific project requirements.
-
-By using SonarQube, development teams can proactively address code quality issues, reduce technical debt, and improve the overall reliability and maintainability of their software projects. It plays a crucial role in fostering a culture of continuous improvement in software development practices.
+      SonarQube is an open-source platform designed to continuously inspect and analyze code quality in software projects. It is widely used in the software development industry to identify and manage code quality issues throughout the development lifecycle. SonarQube provides a range of features and tools to assess the health of codebases and to help teams improve the maintainability, reliability, and security of their software.
+      
+      Key features and uses of SonarQube include:
+      
+      - **Static Code Analysis:**
+         - SonarQube performs static code analysis by scanning the source code without executing it.
+         - It identifies and reports on various code quality issues, such as code smells, bugs, security vulnerabilities, and potential maintainability problems.
+      
+      - **Code Quality Metrics:**
+         - SonarQube measures and reports on a variety of code quality metrics, including code duplication, code complexity, and test coverage.
+         - These metrics provide insights into the overall health and maintainability of the codebase.
+      
+      - **Security Vulnerability Detection:**
+         - SonarQube includes security analyzers that can detect common security vulnerabilities in the code.
+         - It helps developers identify and address security issues early in the development process.
+      
+      - **Integration with CI/CD Pipelines:**
+         - SonarQube integrates seamlessly with continuous integration and continuous deployment (CI/CD) pipelines.
+         - Developers can configure the pipeline to trigger SonarQube analyses automatically, providing immediate feedback on code changes.
+      
+      - **Quality Gates:**
+         - Quality Gates in SonarQube allow teams to set and enforce specific criteria for code quality.
+         - The pipeline can be configured to pass or fail based on whether the code meets predefined quality standards.
+      
+      - **Historical Analysis:**
+         - SonarQube keeps track of historical code quality data, allowing teams to monitor trends over time.
+         - This feature helps teams identify areas of improvement and track the impact of code changes on overall code quality.
+      
+      - **Language Support:**
+         - SonarQube supports a wide range of programming languages, including Java, JavaScript, C#, Python, Ruby, and more.
+         - This makes it versatile and applicable to projects developed in various languages.
+      
+      - **Custom Rules and Extensions:**
+         - Teams can define custom coding rules and extend SonarQube's capabilities to meet specific project requirements.
+      
+      By using SonarQube, development teams can proactively address code quality issues, reduce technical debt, and improve the overall reliability and maintainability of their software projects. It plays a crucial role in fostering a culture of continuous improvement in software development practices.
 
    
    2. **Scanning of images with Trivy**
