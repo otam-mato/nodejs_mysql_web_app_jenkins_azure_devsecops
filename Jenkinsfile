@@ -34,7 +34,7 @@ pipeline {
                 withSonarQubeEnv('SonarQube-Server') {
                     sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=COFFEE_APP \
                     -Dsonar.projectKey=COFFEE_APP \
-                    -Dsonar.login='SonarQube-Token2' '''
+                    -Dsonar.login='squ_7fdce1e749c064deb7f3ffa2871f9145c5343f9f' '''
                 }
             }
         }
@@ -71,10 +71,14 @@ pipeline {
           }
         }
         
-        
-        stage('TRIVY FS SCAN') {
+        stage('Trivy Scan NodeJS Image') {
             steps {
-                sh "trivy fs . > trivyfs.txt"
+                script {
+                    def trivyResult = sh(script: "trivy image montcarotte/jenkins_nodejs_app_demo:latest > trivyimagescan.txt", returnStatus: true)
+                    if (trivyResult != 0) {
+                        error("Trivy scan failed for Node.js image")
+                    }
+                }
             }
         }
         
