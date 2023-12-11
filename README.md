@@ -155,7 +155,7 @@ Vulnerability scanning involves:
   
 - Install and configure **Jenkins**, **SonarQube** and **Trivy**
 
-  **<details markdown=1><summary markdown="span">Install and configure Jenkins, SonarQube and Trivy</summary>**
+  **<details markdown=1><summary markdown="span">Install Jenkins, SonarQube and Trivy</summary>**
   
     ```bash
     #!/bin/bash
@@ -187,6 +187,19 @@ Vulnerability scanning involves:
     sudo apt-get update
     sudo apt-get install trivy -y
     ```
+
+  </details>
+
+  **<details markdown=1><summary markdown="span">Install Jenkins, SonarQube and Trivy</summary>**
+
+  ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/74bf7384-0b49-49b0-8dde-a2345fe3256a)
+  ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/781d1a0d-9078-48ee-b14a-9d8e3e1cfb27)
+  ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/00ec917e-672e-403b-b131-c814e03d5a64)
+  ![image](https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/3122513a-1bfe-4d4e-8d77-f09004599242)
+
+
+
+
 
   </details>
 
