@@ -153,67 +153,40 @@ Vulnerability scanning involves:
 
 - A work station or a **VM**.
   
-- Install and configure **Jenkins**
+- Install and configure **Jenkins**, **SonarQube** and **Trivy**
 
-  **<details markdown=1><summary markdown="span">Install and configure Jenkins</summary>**
+  **<details markdown=1><summary markdown="span">Install and configure Jenkins, SonarQube and Trivy</summary>**
   
-   https://varunmanik1.medium.com/devops-jenkins-aws-series-part-1-how-to-install-jenkins-on-aws-ubuntu-22-04-cb0c3cdb055
-
-   1. Install Java: Jenkins requires Java to run, so the first step is to install Java on the Ubuntu instance. You can do this by running the following command:
-   
-   ```sh
-   sudo apt-get update
-   sudo apt-get install openjdk-11-jdk
-   ```
-   
-   2. Add Jenkins repository: Next, you need to add the Jenkins repository to the instance by running the following commands:
-   
-   ```sh
-   sudo curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee   /usr/share/keyrings/jenkins-keyring.asc > /dev/null
-   sudo echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]   https://pkg.jenkins.io/debian-stable binary/ | sudo tee   /etc/apt/sources.list.d/jenkins.list > /dev/null
-   ```
-   3. Install Jenkins: Now you can install Jenkins by running the following command:
-   
-   ```sh
-   sudo apt-get update
-   sudo apt-get install jenkins
-   ```
-   4. Start Jenkins: Once Jenkins is installed, start & enable the Jenkins service using the following command:
-   
-   ```sh
-   sudo systemctl start jenkins
-   
-   sudo systemctl status jenkins
-   
-   sudo systemctl enable jenkins
-   ```
-   
-   5. Configure Jenkins:
-   
-   ```
-   cat /var/lib/jenkins/secrets/initialAdminPassword
-   ```
-   
-   <img width="700" alt="Screenshot 2023-07-09 at 14 15 15" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/524b21c0-2078-4abb-a041-faf5b76747bc">
-   <img width="700" alt="Screenshot 2023-07-09 at 14 20 35" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/c52f3abd-9538-4332-9c52-09fd00d3bf74">
-   
-   6. Create the pipeline
-   
-   <img width="700" alt="Screenshot 2023-07-09 at 14 22 25" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/3373fc50-a5e8-4592-91b8-b2d742bf7ae1">
-   <img width="700" alt="Screenshot 2023-07-09 at 14 23 43" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/2784771c-ff58-4c1a-88dc-3bc69ca80b23">
-   
-   7. Install NodeJS plugin
-   
-   <img width="700" alt="Screenshot 2023-07-09 at 14 27 48" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/7d60d4d4-cf66-44e2-a709-706de9d38cde">
-   <img width="700" alt="Screenshot 2023-07-09 at 14 32 01" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/1f2a7724-1700-45dc-abb5-ebc550f42551">
-   
-   8. Activate and configure NodeJS plugin
-   
-   <img width="700" alt="Screenshot 2023-07-09 at 14 32 29" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/784955ad-375d-4427-8596-a6db8abaa54b">
-   <img width="700" alt="Screenshot 2023-07-09 at 14 34 20" src="https://github.com/otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes/assets/104728608/ee4ea1f7-164a-44d1-a382-2f267299753b">
-   
-   <br>
-   <br>
+    ```bash
+    #!/bin/bash
+    sudo apt update -y
+    wget -O - https://packages.adoptium.net/artifactory/api/gpg/key/public | tee /etc/apt/keyrings/adoptium.asc
+    echo "deb [signed-by=/etc/apt/keyrings/adoptium.asc] https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_CODENAME/{print$2}' /etc/os-release) main" | tee /etc/apt/sources.list.d/adoptium.list
+    sudo apt update -y
+    sudo apt install temurin-17-jdk -y
+    /usr/bin/java --version
+    curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+    echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+    sudo apt-get update -y
+    sudo apt-get install jenkins -y
+    sudo systemctl start jenkins
+    sudo systemctl status jenkins
+    
+    #install docker
+    sudo apt-get update
+    sudo apt-get install docker.io -y
+    sudo usermod -aG docker ubuntu  
+    newgrp docker
+    sudo chmod 777 /var/run/docker.sock
+    docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
+    
+    #install trivy
+    sudo apt-get install wget apt-transport-https gnupg lsb-release -y
+    wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null
+    echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main" | sudo tee -a /etc/apt/sources.list.d/trivy.list
+    sudo apt-get update
+    sudo apt-get install trivy -y
+    ```
 
   </details>
 
