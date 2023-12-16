@@ -69,7 +69,11 @@ Please note that the success of this pipeline depends on the proper configuratio
 
 ## Functionality
 
-This web application interfaces with a MySQL database, facilitating CRUD (Create, Read, Update, Delete) operations on the database records. DevSecOps practices implemented with OWASP dependency check, SonarQube and Trivy
+The app's frontend interfaces with a MySQL database, facilitating CRUD (Create, Read, Update, Delete) operations on the database records.<br>
+The app is built on two containerized microservices.
+<br>
+<br>
+DevSecOps practices implemented with OWASP dependency check, SonarQube and Trivy
 
 **<details markdown=1><summary markdown="span">Detailed app description</summary>**
 
