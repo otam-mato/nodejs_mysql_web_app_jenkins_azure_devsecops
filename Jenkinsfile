@@ -34,7 +34,7 @@ pipeline {
                 withSonarQubeEnv('SonarQube-Server') {
                     sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=COFFEE_APP \
                     -Dsonar.projectKey=COFFEE_APP \
-                    -Dsonar.login='squ_7fdce1e749c064deb7f3ffa2871f9145c5343f9f' '''
+                    -Dsonar.login='sonar_token' '''
                 }
             }
         }
