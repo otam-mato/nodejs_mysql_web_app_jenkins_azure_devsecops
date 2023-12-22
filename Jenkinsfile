@@ -56,7 +56,7 @@ pipeline {
         stage('Build NodeJS image') {
           steps{
             script {
-              dockerImage = docker.build(dockerhuburl + ":$BUILD_NUMBER")
+              dockerImage = docker.build(dockerhuburl + ":latest")
             }
           }
         }
@@ -65,7 +65,7 @@ pipeline {
           steps {
             dir('./mysql_container') { 
               script {
-                dockerImageMySQL = docker.build(dockerhuburl + ":${BUILD_NUMBER}_mysql")
+                dockerImageMySQL = docker.build(dockerhuburl + ":latest_mysql")
               }
             }
           }
