@@ -28,7 +28,6 @@ pipeline {
             }
         }
         
-
         stage("Sonarqube Analysis "){
             steps{
                 withSonarQubeEnv('SonarQube-Server') {
@@ -38,7 +37,6 @@ pipeline {
                 }
             }
         }
-        
         
         stage('OWASP Dependency-Check Vulnerabilities') {
             steps {
@@ -51,7 +49,6 @@ pipeline {
                 dependencyCheckPublisher pattern: 'dependency-check-report.xml'
             }
         }
-
         
         stage('Build NodeJS image') {
           steps{
@@ -93,17 +90,6 @@ pipeline {
             }
         }
         
-        // stage('Trivy Scan MySQL Image') {
-        //     steps {
-        //         script {
-        //             def trivyResultMySQL = sh(script: "trivy image ${dockerImageMySQL}", returnStatus: true)
-        //             if (trivyResultMySQL != 0) {
-        //                 error("Trivy scan failed for MySQL image")
-        //             }
-        //         }
-        //     }
-        // }
-        
         stage("Quality Gate") {
             steps {
                 script {
@@ -135,6 +121,5 @@ pipeline {
                 }
             }
         }
-        
     }
 }
