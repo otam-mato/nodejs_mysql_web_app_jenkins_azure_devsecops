@@ -28,9 +28,9 @@ Jenkins pipeline script entails several stages, each responsible for a specific 
 
 7. **Build MySQL image:** Builds a Docker image for the MySQL container.
 
-8. **TRIVY SCAN NodeJS:** Uses Trivy to perform a nodejs app image scan and outputs the results to `trivyfs.txt`.
+8. **TRIVY SCAN NodeJS:** Uses Trivy to perform a nodejs app image scan and outputs the results to `trivyimagescan_nodejs.txt`.
    
-10. **TRIVY SCAN MySQL:** Uses Trivy to perform a MySQL image scan and outputs the results to `trivyfs.txt`.
+10. **TRIVY SCAN MySQL:** Uses Trivy to perform a MySQL image scan and outputs the results to `trivyimagescan_mysql.txt`.
 
 11. **Quality Gate:** Waits for the SonarQube Quality Gate to pass.
 
