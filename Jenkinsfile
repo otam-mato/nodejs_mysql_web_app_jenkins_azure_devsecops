@@ -4,8 +4,8 @@ pipeline {
     environment {
         SCANNER_HOME=tool 'sonarqube-scanner'
         dockerregistry = 'https://registry.hub.docker.com'
-        dockerhuburl = "montcarotte/jenkins_nodejs_app_demo"
-        githuburl = "otammato/Jenkins_pipeliline_build_deploy_nodejs_kubernetes"
+        dockerhuburl = 'montcarotte/jenkins_nodejs_app_demo'
+        githuburl = 'otammato/nodejs_mysql_web_app_jenkins_azure_devsecops'
         dockerhubcrd = 'dockerhub'
     }
 
