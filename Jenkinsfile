@@ -74,9 +74,20 @@ pipeline {
         stage('Trivy Scan NodeJS Image') {
             steps {
                 script {
-                    def trivyResult = sh(script: "trivy image montcarotte/jenkins_nodejs_app_demo:latest > trivyimagescan.txt", returnStatus: true)
+                    def trivyResult = sh(script: "trivy image montcarotte/jenkins_nodejs_app_demo:latest > trivyimagescan_nodejs.txt", returnStatus: true)
                     if (trivyResult != 0) {
                         error("Trivy scan failed for Node.js image")
+                    }
+                }
+            }
+        }
+
+        stage('Trivy Scan MySQL Image') {
+            steps {
+                script {
+                    def trivyResult = sh(script: "trivy image montcarotte/jenkins_nodejs_app_demo:latest_mysql > trivyimagescan_mysql.txt", returnStatus: true)
+                    if (trivyResult != 0) {
+                        error("Trivy scan failed for MySQL image")
                     }
                 }
             }
