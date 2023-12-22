@@ -101,7 +101,7 @@ pipeline {
             }
         }
         
-        stage('Deploy images') {
+        stage('Push images') {
           steps{
             script {
               docker.withRegistry(dockerregistry, dockerhubcrd ) {
