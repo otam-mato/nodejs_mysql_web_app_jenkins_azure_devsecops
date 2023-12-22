@@ -28,13 +28,15 @@ Jenkins pipeline script entails several stages, each responsible for a specific 
 
 7. **Build MySQL image:** Builds a Docker image for the MySQL container.
 
-8. **TRIVY SCAN:** Uses Trivy to perform images scan and outputs the results to `trivyfs.txt`.
+8. **TRIVY SCAN NodeJS:** Uses Trivy to perform a nodejs app image scan and outputs the results to `trivyfs.txt`.
+   
+10. **TRIVY SCAN MySQL:** Uses Trivy to perform a MySQL image scan and outputs the results to `trivyfs.txt`.
 
-9. **Quality Gate:** Waits for the SonarQube Quality Gate to pass.
+11. **Quality Gate:** Waits for the SonarQube Quality Gate to pass.
 
-10. **Deploy images:** Pushes the Node.js and MySQL Docker images to the specified Docker registry.
+12. **Push images:** Pushes the Node.js and MySQL Docker images to the specified Docker registry.
 
-11. **K8s Deploy:** Deploys Kubernetes resources using `kubectl apply` for MySQL secrets, deployments, Node.js app deployment, and services.
+13. **K8s Deploy:** Deploys Kubernetes resources using `kubectl apply` for MySQL secrets, deployments, Node.js app deployment, and services.
 
 Each stage represents a phase in the DevSecOps process, from scanning te code for vulnerabilities to deploying the application on Kubernetes. The pipeline leverages various tools such as SonarQube for static code analysis, OWASP Dependency-Check for vulnerability scanning, Docker for containerization, Trivy for images scanning, and Kubernetes for deployment.
 
