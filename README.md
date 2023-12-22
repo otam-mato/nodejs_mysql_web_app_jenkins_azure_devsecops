@@ -363,7 +363,7 @@ Vulnerability scanning involves:
 </p>
 
 <p align="center">
-  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/2d70d0d2-3118-490e-b92e-d87de55e8e65" width="800px"/>
+  <img src="https://github.com/otam-mato/nodejs_mysql_web_app_jenkins_azure_devsecops/assets/113034133/f960f377-40be-466a-9287-c344e72cfd13" width="800px"/>
 </p>
 
 <p align="center">
