@@ -1,5 +1,11 @@
 # Node.JS + MySQL Web App.<br><br>Building DevSecOps pipeline with Jenkins to deploy the app on Kubernetes based on AKS.
 
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img height="50" width="50" src="https://cdn.simpleicons.org/helm/blue" /><img src="https://skillicons.dev/icons?i=kubernetes,azure,docker,nodejs,mysql,trivy,sonarqube,owasp"/>
+  </a>
+</p>
+
 <br>
 
 > [!NOTE]
