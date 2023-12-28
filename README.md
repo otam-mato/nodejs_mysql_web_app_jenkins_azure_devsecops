@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img height="50" width="50" src="https://cdn.simpleicons.org/owasp/purple" /><img height="50" width="50" src="https://cdn.simpleicons.org/trivy/#1904DA" /><img height="50" width="50" src="https://cdn.simpleicons.org/sonarqube/blue" /><img src="https://skillicons.dev/icons?i=kubernetes,azure,docker,nodejs,mysql,jenkins"/>
+    <img height="50" width="50" src="https://cdn.simpleicons.org/owasp/purple" /><img height="50" width="50" src="https://cdn.simpleicons.org/trivy/orange" /><img height="50" width="50" src="https://cdn.simpleicons.org/sonarqube/blue" /><img src="https://skillicons.dev/icons?i=kubernetes,azure,docker,nodejs,mysql,jenkins"/>
   </a>
 </p>
 
