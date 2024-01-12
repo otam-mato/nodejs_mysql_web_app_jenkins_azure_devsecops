@@ -1,4 +1,4 @@
-# Node.JS + MySQL Web App.<br><br>Implementing DevSecOps stages in CICD Jenkins pipeline to deploy the app on Kubernetes based on Azure AKS.
+# Node.JS + MySQL Web App.<br><br>Implementing DevSecOps stages into CICD Jenkins pipeline to deploy the app on Kubernetes based on Azure AKS.
 
 <p align="center">
   <a href="https://skillicons.dev">
